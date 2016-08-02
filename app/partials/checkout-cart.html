@@ -1,0 +1,1183 @@
+<div class="navbar navbar-default navbar-fixed-top craftsvilla-navbar" role="navigation" data-ng-init="getCartDetails()">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<div class="without-searchbar">
+				<button type="button" class="navbar-toggle pull-left mobile-navbar" data-toggle="offcanvas" data-target=".sidebar-offcanvas">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand logo-container" rel="home" href="http://www.craftsvilla.com/" target="_self">
+					<svg width="170px" height="28px" viewBox="0 0 203 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="cv-logo">
+						<title>cv_logo</title>
+						<desc>Created with Sketch.</desc>
+						<defs>
+							<path id="path-1" d="M0,0.444230769 L202.429428,0.444230769 L202.429428,33 L0,33 L0,0.444230769 Z"></path>
+						</defs>
+						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g id="icons" transform="translate(-434.000000, -60.000000)">
+								<g id="cv_logo" transform="translate(434.000000, 60.000000)">
+									<mask id="mask-2" fill="white">
+										<use xlink:href="#path-1"></use>
+									</mask>
+									<g id="Clip-2"></g>
+									<path d="M13.7259745,27.4887462 C8.56325844,25.6255154 6.62264527,21.1273615 6.20578519,18.2242077 C5.20248066,11.2239769 9.89320082,6.51851538 14.3391514,6.36028462 C20.2177975,6.15128462 21.6387975,9.95305385 21.6387975,12.3908231 C21.6387975,15.2372846 19.785065,16.9397462 17.7425342,16.9397462 C15.1060403,16.9397462 14.7560115,15.2372846 14.7560115,15.2372846 C16.6740691,15.4048231 18.030744,14.2549 18.0015053,12.4475154 C17.9722667,10.6528231 16.8829169,9.68228462 14.9289374,9.7779 C11.6717481,9.93697692 11.8463449,14.3090538 11.8463449,14.3090538 C11.8463449,16.7713615 13.2581556,20.0011308 18.1435218,20.0011308 C27.8290444,20.0011308 27.7722379,6.72751538 27.7722379,6.72751538 C24.5442872,6.72751538 23.3713984,6.20120769 20.8142667,4.99797692 C18.6163531,3.96313077 16.6214395,3.44951538 14.3391514,3.44951538 C4.8390856,3.44951538 -0.000334156379,10.8245923 -0.000334156379,17.3602846 C-0.000334156379,24.7615923 4.68370288,32.9997462 15.5746947,32.9997462 C20.6964765,32.9997462 23.8584313,31.0874385 25.7756535,29.0499 C25.7915259,29.0329769 25.8073984,29.0169 25.8232708,28.9982846 C25.8909374,28.9263615 25.9535918,28.8544385 26.0170815,28.7816692 C26.6085383,28.1047462 27.4096782,27.0259 27.8415753,25.7634385 C21.5995342,29.8317462 15.0834848,27.9786692 13.7259745,27.4887462 L13.7259745,27.4887462 Z M195.111069,24.7649769 C194.040098,24.5052077 192.714333,24.3317462 191.258246,24.3317462 C188.99016,24.3317462 187.620954,25.3725154 187.620954,27.1062846 C187.620954,28.6234385 188.733695,29.4467462 190.402806,29.4467462 C192.071917,29.4467462 193.697588,28.7969 195.111069,27.7561308 L195.111069,24.7649769 Z M202.429929,28.6234385 L202.429929,32.5250538 L195.196279,32.5250538 L195.196279,30.4443615 C193.697588,31.7449 191.429501,32.8719769 188.904114,32.8719769 C185.694542,32.8719769 182.826645,31.0950538 182.826645,27.5395154 C182.826645,23.9848231 185.908402,21.8169769 190.360201,21.8169769 C192.284942,21.8169769 194.083538,22.0775923 195.111069,22.3373615 L195.111069,20.8193615 C195.111069,19.6931308 194.853769,18.8258231 194.382608,18.2191308 C193.612378,17.2223615 192.371822,16.8322846 190.702711,16.8322846 C189.888205,16.8322846 189.290065,16.9617462 188.861509,17.1352077 C188.947555,17.3949769 189.032765,17.8282077 189.032765,18.0888231 C189.032765,19.5196692 187.920859,20.5595923 186.507378,20.5595923 C185.094732,20.5595923 184.024596,19.5628231 184.024596,18.0016692 C184.024596,15.6612077 186.378728,13.1895923 191.472942,13.1895923 C194.682514,13.1895923 196.86539,14.1009 198.192826,15.7475154 C199.176081,16.9617462 199.647242,18.6092077 199.647242,20.5164385 L199.647242,28.6234385 L202.429929,28.6234385 Z M177.579555,0.7909 L170.00423,0.7909 L170.00423,4.77966923 L172.913896,4.77966923 L172.913896,28.6234385 L170.00423,28.6234385 L170.00423,32.5250538 L180.361407,32.5250538 L180.361407,28.6234385 L177.579555,28.6234385 L177.579555,0.7909 Z M164.94009,0.7909 L157.364765,0.7909 L157.364765,4.77966923 L160.275267,4.77966923 L160.275267,28.6234385 L157.364765,28.6234385 L157.364765,32.5250538 L167.721942,32.5250538 L167.721942,28.6234385 L164.94009,28.6234385 L164.94009,0.7909 Z M149.37425,10.6325154 C151.042526,10.6325154 152.541217,9.24482308 152.541217,7.51105385 C152.541217,5.77728462 151.128571,4.38959231 149.45946,4.38959231 C147.790349,4.38959231 146.292493,5.77728462 146.292493,7.51105385 C146.292493,9.24482308 147.705139,10.6325154 149.37425,10.6325154 L149.37425,10.6325154 Z M152.198707,13.5365154 L144.665987,13.5365154 L144.665987,17.5252846 L147.533049,17.5252846 L147.533049,28.6234385 L144.665987,28.6234385 L144.665987,32.5250538 L154.980559,32.5250538 L154.980559,28.6234385 L152.198707,28.6234385 L152.198707,13.5365154 Z M133.126732,17.3086692 L135.952024,17.3086692 L131.457621,27.1925923 L126.964053,17.3086692 L129.659024,17.3086692 L129.659024,13.5365154 L120.072077,13.5365154 L120.072077,17.5252846 L122.255789,17.5252846 L129.7033,32.8719769 L133.040686,32.8719769 L140.488197,17.5252846 L142.671073,17.5252846 L142.671073,13.5365154 L133.126732,13.5365154 L133.126732,17.3086692 Z M111.09246,21.0368231 C108.224563,20.2566692 107.155263,19.6931308 107.155263,18.6092077 C107.155263,17.6115923 108.181958,16.6579769 110.279625,16.6579769 C111.22111,16.6579769 112.162596,16.8322846 112.933662,17.1352077 C112.847616,17.3949769 112.847616,17.6547462 112.847616,17.9585154 C112.847616,19.3893615 113.875147,20.2998231 115.373003,20.2998231 C116.742209,20.2998231 117.68453,19.2599 117.68453,17.7419 C117.68453,16.8322846 117.34202,16.0081308 116.656999,15.3142846 C115.373003,14.0137462 112.633756,13.1464385 110.36567,13.1464385 C105.101036,13.1464385 102.703464,16.2247462 102.703464,19.1727462 C102.703464,22.4245154 104.887176,23.6810538 110.065765,25.0687462 C112.933662,25.8489 113.746497,26.4124385 113.746497,27.3660538 C113.746497,28.7537462 112.206036,29.4035923 110.32223,29.4035923 C108.995629,29.4035923 107.797678,29.1429769 106.941402,28.7969 C106.984007,28.5371308 107.026612,28.2765154 107.026612,28.0167462 C107.026612,26.3684385 105.785221,25.5028231 104.501226,25.5028231 C103.045974,25.5028231 102.019279,26.6722077 102.019279,28.0599 C102.019279,29.0566692 102.319184,29.8368231 103.088579,30.6178231 C104.330806,31.8743615 107.412563,32.9151308 110.279625,32.9151308 C114.516728,32.9151308 118.19746,30.7912846 118.19746,26.8025154 C118.19746,23.3772846 115.586863,22.2510538 111.09246,21.0368231 L111.09246,21.0368231 Z M93.7589333,27.7561308 C93.5450733,27.3660538 93.459028,26.9759769 93.459028,26.3684385 L93.459028,17.5252846 L99.1522173,17.5252846 L99.1522173,13.5365154 L93.459028,13.5365154 L93.459028,7.51105385 L88.8368099,9.54859231 L88.8368099,13.5365154 L85.1986823,13.5365154 L85.1986823,17.5252846 L88.8368099,17.5252846 L88.8368099,27.2797462 C88.8368099,28.4931308 89.05067,29.4899 89.4783901,30.2709 C90.4207111,32.0918231 92.2610774,32.8719769 94.5291638,32.8719769 C96.2417152,32.8719769 97.7395712,32.3947462 99.0235671,31.7449 L99.4086823,27.6698231 C98.2959416,28.1902077 96.9259004,28.6665923 95.7279498,28.6665923 C94.7856288,28.6665923 94.1006082,28.3636692 93.7589333,27.7561308 L93.7589333,27.7561308 Z M79.4679004,5.34320769 C79.6817605,4.99628462 80.0668757,4.73651538 80.4519909,4.56305385 C80.9657564,5.55982308 81.6933819,6.33997692 83.1486329,6.33997692 C84.4760691,6.33997692 85.6731844,5.34320769 85.6731844,3.65259231 C85.6731844,1.74451538 83.9614683,0.444823077 81.5221267,0.444823077 C79.4252955,0.444823077 77.712744,1.13782308 76.3861432,2.43836154 C74.5883819,4.21613077 73.9894066,6.38397692 73.9894066,9.85151538 L73.9894066,13.5365154 L70.7798346,13.5365154 L70.7798346,17.5252846 L73.9894066,17.5252846 L73.9894066,28.6234385 L71.1641144,28.6234385 L71.1641144,32.5250538 L82.2497523,32.5250538 L82.2497523,28.6234385 L78.6116247,28.6234385 L78.6116247,17.5252846 L83.4911432,17.5252846 L83.4911432,13.5365154 L78.6116247,13.5365154 L78.6116247,9.15766923 C78.6116247,7.33759231 78.91153,6.16651538 79.4679004,5.34320769 L79.4679004,5.34320769 Z M61.4785918,24.7649769 C60.408456,24.5052077 59.0818551,24.3317462 57.6266041,24.3317462 C55.3576823,24.3317462 53.9884765,25.3725154 53.9884765,27.1062846 C53.9884765,28.6234385 55.1012173,29.4467462 56.7703284,29.4467462 C58.4394395,29.4467462 60.0659457,28.7969 61.4785918,27.7561308 L61.4785918,24.7649769 Z M66.0156,28.6234385 L68.7974519,28.6234385 L68.7974519,32.5250538 L61.5638016,32.5250538 L61.5638016,30.4443615 C60.0659457,31.7449 57.7978593,32.8719769 55.2724724,32.8719769 C52.062065,32.8719769 49.1950033,31.0950538 49.1950033,27.5395154 C49.1950033,23.9848231 52.2767605,21.8169769 56.7277235,21.8169769 C58.6532996,21.8169769 60.4518963,22.0775923 61.4785918,22.3373615 L61.4785918,20.8193615 C61.4785918,19.6931308 61.2212914,18.8258231 60.7509663,18.2191308 C59.9807358,17.2223615 58.7393449,16.8322846 57.0702337,16.8322846 C56.256563,16.8322846 55.6575877,16.9617462 55.2298675,17.1352077 C55.3150774,17.3949769 55.4011226,17.8282077 55.4011226,18.0888231 C55.4011226,19.5196692 54.2883819,20.5595923 52.8749004,20.5595923 C51.4630897,20.5595923 50.3929539,19.5628231 50.3929539,18.0016692 C50.3929539,15.6612077 52.7470856,13.1895923 57.8404642,13.1895923 C61.0500362,13.1895923 63.2337481,14.1009 64.560349,15.7475154 C65.5444395,16.9617462 66.0156,18.6092077 66.0156,20.5164385 L66.0156,28.6234385 Z M47.6186206,16.3110538 C47.6186206,17.9153615 46.378065,19.2599 44.8367687,19.2599 C43.424958,19.2599 42.482637,18.4357462 42.0975218,17.5684385 C40.770921,18.0448231 39.2296247,19.5196692 38.3741844,21.1662846 L38.3741844,28.6234385 L41.6271967,28.6234385 L41.6271967,32.5250538 L30.9266741,32.5250538 L30.9266741,28.6234385 L33.7085259,28.6234385 L33.7085259,17.5252846 L30.9266741,17.5252846 L30.9266741,13.5365154 L38.2029292,13.5365154 L38.2029292,17.8282077 C39.7859951,15.2702846 41.7550115,13.1895923 44.1525835,13.1895923 C46.4641103,13.1895923 47.6186206,14.6204385 47.6186206,16.3110538 L47.6186206,16.3110538 Z" id="Fill-1" fill="#981937" mask="url(#mask-2)"></path>
+								</g>
+							</g>
+						</g>
+					</svg>
+				</a>
+				<div class="mobile-top visible-sm visible-xs pull-right">
+					<i class="icon-v2 icon-small icon-search-v2 header-mobile-icon"></i>
+					<a href="http://www.craftsvilla.com/wishlist/" target="_self"><i class="icon-v2 icon-wish icon-small header-mobile-icon"></i></a>
+					<a class="cart-icon-section" rel="nofollow" ng-href="/buy/cart" ng-click="dataLayer.push({'event':'WentToCartEvent','eventName':'WentToCart','source':'TopNavigation','count':'{{items}}'});">
+						<span class="icon-container">
+							<i class="icon-v2 icon-cart icon-small header-mobile-icon"></i>
+							<span class="cart-count-container">
+								<span class="mnotification">
+									{{items}}
+								</span>
+							</span>
+						</span>
+					</a>
+					<a rel="nofollow" ng-click="loginNow()" class="user-icon-section">
+						<i class="icon-v2 icon-user header-mobile-icon"></i>
+					</a>
+				</div>
+			</div>
+
+			<div class="with-searchbar">
+				<div class="back-arrow-container">
+					<i class="icon-v2 icon-small icon-back-arrow"></i>
+				</div>
+				<form class="col-xs-9"id="msearch_mini_form" action="{{searchEndPoint}}" method="get">
+					<input type="hidden" name="searchby" id="searchby" value="product">
+					<input class="typeahead sb-search-input" placeholder="Search..." type="text" name="q" value = "" id="msearchval">
+					<button type="submit" class="btn btn-default col-md-2 text-uppercase sb-search-submit" onclick="dataLayer.push({'event':'SearchPerformedEvent','eventName':'SearchPerformed','source':'homeScreen','suggestionUsed':'no'});"><i class="icon-v2 icon-small icon-search-v2"></i></button>
+				</form>
+			</div>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse nopadding">
+			<div class="col-md-7 autosuggest-section">
+				<form id="search_mini_form" role="search" action="{{searchEndPoint}}" method="get" onsubmit="javascript:return fillvalues();">
+					<input type="hidden" name="searchby" id="searchby" value="product" />
+					<div class="form-group col-md-10 text-holder">
+						<input type="text"  name="q" class="typeahead form-control" id="searchval" placeholder="Eg: Salwar Suit, Lehnga, Kurtis">
+					</div>
+					<button type="submit" class="btn btn-default col-md-2 text-uppercase search-button" onclick="dataLayer.push({'event':'SearchPerformedEvent','eventName':'SearchPerformed','source':'homeScreen','suggestionUsed':'no'});">Search</button>
+				</form>
+			</div>
+
+			<ul class="nav navbar-nav col-md-3 right-section pull-right">
+				<a class="col-md-2 wishlist" href="http://www.craftsvilla.com/wishlist/">
+					<i class="icon-small icon-wish"></i>
+				</a>
+				<a class="cart-icon-container header-icon-container" rel="nofollow" ng-href="/buy/cart" ng-click="dataLayer.push({'event':'WentToCartEvent','eventName':'WentToCart','source':'TopNavigation','count':'{{items}}'});">
+					<li class="col-md-4 cart-container">
+						<span class="cart-icon">
+							<i class="icon-v2 icon-cart icon-small"></i>
+						</span>
+						<span class="cart-text">
+							Cart
+						</span>
+						<span class="notification">
+							{{items}}
+						</span>
+					</li>
+				</a>
+				<li id="loginLogoutResponse" class="col-md-4">
+					<a class="user-icon-container header-icon-container" ng-click="loginNow()" ng-if="!isLoggedIn">
+        				<li class="account-section" ng-if="!isLoggedIn">
+							<span class="user-icon">
+								<i class="icon-v2 icon-user"></i>
+							</span>
+							<span class="user-text">
+								Sign In
+							</span>
+        				</li>
+				    </a>
+    				<li class="account-section loggedin-section" ng-if="isLoggedIn">
+    					<a href="#" class="dropdown-toggle user-icon-container header-icon-container" data-toggle="dropdown">
+                            <span class="user-icon"><i class="icon-v2 icon-user loggedin-icon"></i></span>
+                            <span class="user-text">Account</span> <b class="caret"></b>
+                        </a>
+    					<ul class="dropdown-menu dropdown-custom" role="menu" aria-labelledby="dropdownMenu">
+								<li></li>
+								<li><a ng-href="{{HOST}}/sales/order/history/#open"><b>My Orders</b></a></li>
+								<li><a ng-href="{{HOST}}/customer/address/"><b>Address Book</b></a></li>
+								<li><a ng-href="{{HOST}}//customer/account/bankdetails/"><b>Bank Details</b></a></li>
+								<li class="divider"></li>
+								<li><a ng-href="{{HOST}}/wishlist/"> <b>Wishlist</b></a></li>
+								<li class="divider"></li>
+								<li><a ng-href="{{HOST}}/customer/account/"> <b>Settings</b></a></li>
+								<li class="divider"></li>
+								<li><a ng-href="{{HOST}}/customer/account/logout"> <b>Logout</b></a></li>
+              </ul>
+    				</li>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</div>
+<!-- Craftsvilla navbar ends here -->
+
+<a class="col-xs-12 buyer_protection_mobile visible-sm visible-xs" id="buyer_protection_mobile" data-toggle="modal" data-target="#myModal">
+	<img src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/sheild.png" class="protection-shield"/>
+	<span class="protection_text"><b>100%</b> Buyer Protection</span>
+	<span class="learn_more">Learn More</span>
+</a>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header no-border custom-modal-header">
+				<div  class="policies-close"  data-dismiss="modal">X</div>
+			</div>
+			<div class="modal-body pad10px pad0-15">
+				<div>
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs policies-nav" role="tablist">
+						<li role="presentation" class="active"><a href="#shippingPolicies" aria-controls="shippingPolicies" role="tab" data-toggle="tab">Shipping Policies</a></li>
+						<li role="presentation"><a href="#returnPolicies" aria-controls="returnPolicies" role="tab" data-toggle="tab">Return Policies</a></li>
+						<li role="presentation"><a href="#securePayments" aria-controls="securePayments" role="tab" data-toggle="tab">100% Secure Payments</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content policies-tab-conent">
+						<div role="tabpanel" class="tab-pane active" id="shippingPolicies">
+							<div class="mart5"><b>Shipping Time</b></div>
+
+							<p>We deliver in India within 10 days and outside of India within 21 days. Currently our average delivery time in India is around 4 days and outside of India is 18 days</p>
+
+							<div class="mart5"><b>Shipment Tracking:</b></div>
+
+							<p>You will get an email and SMS with the tracking details as soon as the product is shipped. You can also request the seller for a
+								faster shipping by clicking the ‘Contact Seller’ button on the product page after you place the order</p>
+
+							<div class="mart5"><b>Shipping Locations:</b> </div>
+
+							<p>We deliver to over 100 countries globally including USA, UK, Australia and Canada </p>
+						</div>
+						<div role="tabpanel" class="fade tab-pane" id="returnPolicies">
+							<div class="mart5"><b>Return Time:</b></div>
+							<p>We have a 100% Buyer protection policy wherein you can return the product for any reason whatsoever. You can ship it back to us within 14 days and get a full refund  </p>
+							<div class="mart5"><b>Return Process: </b></div>
+							<p>Just email us your complaint with order number within 7 days of receipt of the product. You can also login to your account and raise a dispute from there. Our team will reply to you with an approval email containing the instructions and return shipping address to which you need to send back the product within 7 days.  </p>
+							<div class="mart5"><b>Refund: </b></div>
+							<p>If you wish, we can offer you a redeemable voucher worth the refund amount for future purchases. Else we can also refund the entire amount back to your bank account without any deductions along  with Rs. 100 for return shipping.</p>
+						</div>
+						<div role="tabpanel" class="fade tab-pane" id="securePayments">
+							<div class="mart5"><b>Payment Modes:</b> </div>
+							<?php if(!$is_international) { ?>
+							<p>Cash on Delivery</p>
+							<?php } ?>
+							<p>Net Banking, Debit cards/ Credit Cards (Visa, MasterCard, American Express, Diners Club cards accepted) International Credit Cards </p>
+							<div class="mart5"><b>Payment Details: </b></div>
+							<p>You will receive an email with your payment details immediately after you make a purchase. In case of any issues our customer care would be happy to help you </p>
+							<div class="mart5"><b>Payment Security:</b></div>
+							<p>You transparently pay through our Payment Gateway and all the data is transferred through high level encryption technology. We guarantee you, your payments are 100% secured with us and your payment details are never shared with anyone during the payment process </p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- modal ends -->
+<!-- div class="dropdown visible-xs " id="custom-header-dropdown">
+	<ul class="dropdown-menu dropdown-category" aria-labelledby="dropdownMenu1">
+		<li class="dropdown-header"><b>FASHION</b></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/womens-clothing/sarees">Sarees</a></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/womens-clothing/lehangas">Bridal Lehenga</a></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/womens-clothing/salwar-suits">Salwar Suits</a></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/womens-clothing">Other Clothing</a></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/jewellery">Jewellery</a></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/accessories/bags">Bags</a></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/accessories">Accessories</a></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/accessories/footwear">Footwear</a></li>
+		<li class="dropdown-header"><b>HOME</b></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/home-decor">Home Decor</a></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/home-furnishing">Home Furnishings</a></li>
+		<li class="dropdown-header"><b>LIFESTYLE</b></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/food-health">Food &amp; Health</a></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/bath-beauty">Bath &amp; Beauty</a></li>
+		<li class="dropdown-header"><b>OTHER</b></li>
+		<li><a target="_self" target="_self" href="#">Gifts</a></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/kids.html">Kids</a></li>
+		<li><a target="_self" href="#">Books</a></li>
+		<li><a target="_self" href="http://www.craftsvilla.com/spiritual">Spiritual</a></li>
+	</ul>
+</div -->
+<!-- //  Mega Menu start -->
+<div mob-menu-overlay>&nbsp;</div>
+<div class="container-fluid menu-wrapper hidden-lg">
+	<div class="container">
+		<ul data-mega-menu="">
+			<li class="visible-xs shop-by">Shop by <span data-shop-by-close=""><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/delete-mobile.png" alt=""></span></li>
+			<li class="">
+				<a first-click="">CASUAL WEAR <span class="first_arrow visible-xs visible-sm"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Shape.png" alt="" tille=""></span></a>
+				<div data-sub-menu="">
+					<div class="container sub-menu-wrapper">
+						<ul>
+							<li>
+								<a click-menu="">Kurtis<div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=casual+kurti&amp;MID=megamenu_casualwear_kurtis_casualkurtis">Casual Kurtis</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=long+kurti&amp;MID=megamenu_casualwear_kurtis_longkurti">Long kurti</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=short+kurti&amp;MID=megamenu_casualwear_kurtis_shortkurti">Short kurti</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=straight+suit&amp;MID=megamenu_casualwear_kurtis_straight">Straight Suit</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=A+line+kurti&amp;MID=megamenu_casualwear_kurtis_aline">A line Kurtis <span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/kurtis-tunics/kurtis?MID=megamenu_casualwear_kurtis_seeall">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Skirts <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/skirts/?MID=megamenu_casualwear_skirts_kneelength#catId=10024&amp;length=knee-length&amp;pageId=1&amp;">Knee-length</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/skirts/?MID=megamenu_casualwear_skirts_3/4thlength#catId=10024&amp;length=3/4th length&amp;pageId=1&amp;">3/4th length</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/skirts/?MID=megamenu_casualwear_skirts_anklelength#catId=10024&amp;length=ankle-length&amp;pageId=1&amp;">Ankle-length</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/skirts/?MID=megamenu_casualwear_skirts_designer#catId=10024&amp;style=designer&amp;pageId=1&amp;">Designer <span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/skirts/?MID=megamenu_casualwear_skirts_traditional#catId=10024&amp;style=traditional&amp;pageId=1&amp;">Traditional</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/skirts/?MID=megamenu_casualwear_skirts_seeall#catId=10024&amp;pageId=1&amp;">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Fusion Wear <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/gowns/?MID=megamenu_casualwear_contemporarywear_gowns#catId=10025&amp;type=gown&amp;pageId=1&amp;">Gowns</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/kaftans/?MID=megamenu_casualwear_topwear_kaftans">Kaftans</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/cholis/?MID=megamenu_casualwear_topwear_tops#catId=10019&amp;type=top&amp;pageId=1&amp;">Tops</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/kurtis-tunics/?MID=megamenu_casualwear_topwear_tunics#catId=10021&amp;type=tunic&amp;pageId=1&amp;">Tunics</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/cholis/?MID=megamenu_casualwear_topwear_cholis#catId=10019&amp;type=choli&amp;pageId=1&amp;">Cholis</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/gowns/?MID=megamenu_casualwear_contemporarywear_gowns#catId=10025&amp;type=gown&amp;pageId=1">Dresses <span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/jumpsuits/?MID=megamenu_casualwear_contemporarywear_jumpsuits">Jumpsuits</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">BottomWear <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/palazzos/?MID=megamenu_casualwear_bottomwear_palazzos#catId=10020&amp;type=palazzos&amp;pageId=1&amp;">Palazzos</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/churidars-salwars-leggings/?MID=megamenu_casualwear_bottomwear_harems#catId=10027&amp;type=harem&amp;pageId=1&amp;">Harems</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/churidars-salwars-leggings/?MID=megamenu_casualwear_bottomwear_leggings#catId=10027&amp;type=legging&amp;pageId=1&amp;">Leggings</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=dhoti&amp;MID=megamenu_casualwear_bottomwear_dhotis">Dhotis</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/palazzos/?MID=megamenu_casualwear_bottomwear_pants#catId=10020&amp;type=pant&amp;pageId=1&amp;">Pants</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/churidars-salwars-leggings/?MID=megamenu_casualwear_bottomwear_churidars#catId=10027&amp;type=churidar&amp;pageId=1&amp;">Churidars</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Islamic wear <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/burquas-hijabs/?MID=megamenu_fashion&amp;lifestyle_islamicwear_abayas_burkas#catId=10028&amp;type=burqua&amp;pageId=1&amp;">Abayas/Burkas</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/burquas-hijabs/?MID=megamenu_fashion&amp;lifestyle_islamicwear_hijab#catId=10028&amp;type=hijab&amp;pageId=1&amp;">Hijab</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/kurtis-tunics/kurtis/?MID=megamenu_fashion&amp;lifestyle_islamicwear_kurtisandtunics#feedid=20&amp;type=kurti,tunic&amp;pageId=1&amp;">Kurtis and Tunics</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=salwar+kameez&amp;MID=megamenu_fashion&amp;lifestyle_islamicwear_salwarkameez">Salwar Kameez</a></li>
+								</ul>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box">
+									<a href=""><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Ramadan_Special_170X320.jpg" alt=""></a>
+								</div>
+							</li>
+						</ul>
+					<div id="infinite_analytics_div_1"></div><div id="infinite_analytics_div_2"></div><div id="infinite_analytics_div_3"></div></div>
+				</div>
+			</li>
+			<li class="">
+				<a first-click="">SAREES <span class="first_arrow visible-xs visible-sm"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Shape.png" alt="" tille=""></span></a>
+				<div data-sub-menu="">
+					<div class="container sub-menu-wrapper">
+						<ul>
+							<li>
+								<a click-menu="">By Fabric <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/cotton-sarees/?MID=megamenu_sarees_fabric_cotton">Cotton</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/chiffon-sarees/?MID=megamenu_sarees_fabric_chiffon">Chiffon</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/georgette-sarees/?MID=megamenu_saree_fabric_georgette">Georgette<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/silk-sarees/?MID=megamenu_sarees_fabric_silk#catId=10015&amp;saree-fabric=silk&amp;pageId=1&amp;">Silk</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/net-sarees/?MID=megamenu_sarees_fabric_net#catId=10015&amp;saree-fabric=net&amp;pageId=1&amp;">Net</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/satin-sarees/?MID=megamenu_sarees_fabric_satin#catId=10015&amp;saree-fabric=satin&amp;pageId=1&amp;">Satin</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_fabric_tissue#catId=10015&amp;saree-fabric=tissue&amp;pageId=1&amp;">Tissue</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_fabric_khadi#catId=10015&amp;saree-fabric=khadi&amp;pageId=1&amp;">Khadi</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_fabric_seeall">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">By Work <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/banarasi-sarees/?MID=megamenu_sarees_work_banarasi">Banarasi</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_work_embroidery#catId=10015&amp;saree-work=embroidered&amp;pageId=1&amp;">Embroidery<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_work_embellishments#catId=10015&amp;saree-work=stone embellished&amp;pageId=1&amp;">Embellishments</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_work_bhandej#catId=10015&amp;saree-work=bhandhej&amp;pageId=1&amp;">Bhandej</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_work_chikankari#catId=10015&amp;saree-work=chikankari&amp;pageId=1&amp;">Chikankari</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_work_zariwork#catId=10015&amp;saree-work=zari work&amp;pageId=1&amp;">Zari work<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/bandhani-sarees/?MID=megamenu_sarees_work_bandhani">Bandhani</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/kanchivaram-sarees/?MID=megamenu_sarees_work_kanchivaram">Kanjivaram</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_work_seeall">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">By Style<div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_style_designe">Designer<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_style_bollywood#catId=10015&amp;style=bollywood&amp;pageId=1&amp;">Bollywood</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_style_halfhalfsaree#catId=10015&amp;style=half half saree&amp;pageId=1&amp;">Half - Half saree</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_style_lehengasaree#catId=10015&amp;style=lehenga saree&amp;pageId=1&amp;">Lehenga Saree</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_style_contemporary#catId=10015&amp;style=contemporary&amp;pageId=1&amp;">Contemporary<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_style_traditional#catId=10015&amp;style=traditional&amp;pageId=1&amp;">Traditional</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_style_seeall">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">By Occassion <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_occassion_festival#catId=10015&amp;occasion=festival&amp;pageId=1&amp;">Festival</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_occassion_party#catId=10015&amp;occasion=party&amp;pageId=1&amp;">Party</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/wedding-sarees/?MID=megamenu_sarees_occassion_wedding">Wedding</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_occassion_casual#catId=10015&amp;occasion=casual&amp;pageId=1&amp;">Casual</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_occassion_casual#catId=10015&amp;occasion=bridal&amp;pageId=1&amp;">Bridal <span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_occassion_ceremonial#catId=10015&amp;occasion=ceremonial&amp;pageId=1&amp;">Ceremonial</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/sarees/?MID=megamenu_sarees_occassion_seeall">See All</a></li>
+								</ul>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/sarees-offers.html?MID=megamenu_sarees_MB_1"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/best_selling_saree.jpg" alt=""></a>
+									<a href="http://www.craftsvilla.com/cvfeeds/best-sarees-offers-below-1999.html?MID=megamenu_sarees_MB_2"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Sarees_Under_1699.jpg" alt=""></a>
+								</div>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box long_image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/occasional-wear-sarees-under-1299-20178.html?MID=megamenu_sarees_MB_3"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Designer_Drapes_170X320.jpg" alt=""></a>
+								</div>
+							</li>
+						</ul>
+					<div id="infinite_analytics_div_1"></div><div id="infinite_analytics_div_2"></div><div id="infinite_analytics_div_3"></div></div>
+				</div>
+			</li>
+			<li class="">
+				<a first-click="">SALWAR SUITS <span class="first_arrow visible-xs visible-sm"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Shape.png" alt="" tille=""></span></a>
+				<div data-sub-menu="">
+					<div class="container sub-menu-wrapper">
+						<ul>
+							<li>
+								<a click-menu="">Top Selling <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=anarkali&amp;MID=megamenu_salwarsuits_topselling_anarkalis">Anarkalis</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=patiyala&amp;MID=megamenu_salwarsuit_topselling_patiala">Patiala</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=straight+suit&amp;MID=megamenu_salwarsuits_topselling_straight">Straight Suits</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?MID=megamenu_salwarsuit_topselling_designer&amp;searchby=product&amp;q=designer+suits#price=2000_5000&amp;pageId=1&amp;">Designer Suits</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=churidar&amp;MID=megamenu_salwarsuits_topselling_gowns#price=1000_2000&amp;pageId=1&amp;">Churidar Suits</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=gown&amp;MID=megamenu_salwarsuit_topselling_gowns#price=1000_2000&amp;pageId=1&amp;">Gowns<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_topselling_seeall#catId=10022&amp;price=1000_2000&amp;pageId=1&amp;">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">By Style <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_style_straightsuit#catId=10022&amp;style=straight suit&amp;pageId=1&amp;">Straight Suit</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_style_alinestyle#catId=10022&amp;style=a line style&amp;pageId=1&amp;">A line style</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_style_contemporary#catId=10022&amp;style=contemporary&amp;pageId=1&amp;">Contemporary<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_style_designer#catId=10022&amp;style=designer&amp;pageId=1&amp;">Designer</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_style_traditional#catId=10022&amp;style=traditional&amp;pageId=1&amp;">Traditional</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/anarkalis/?MID=megamenu_salwarsuits_style_anarkali">Anarkali</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_style_seeall#catId=10022&amp;pageId=1&amp;">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">By Fabric <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_fabric_cotton#catId=10022&amp;kurta-fabric=cotton&amp;pageId=1&amp;">Cotton</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_fabric_silk#catId=10022&amp;kurta-fabric=silk&amp;pageId=1&amp;">Silk</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_fabric_khadi#catId=10022&amp;kurta-fabric=khadi&amp;pageId=1&amp;">Khadi</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_fabric_georgette#catId=10022&amp;kurta-fabric=georgette&amp;pageId=1&amp;">Georgette<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_fabric_chiffon#catId=10022&amp;kurta-fabric=chiffon&amp;pageId=1&amp;">Chiffon</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_fabric_net#catId=10022&amp;kurta-fabric=net&amp;pageId=1&amp;">Net</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_fabric_seeall#catId=10022&amp;pageId=1&amp;">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">By Occassion<div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_occasion_festival#catId=10022&amp;occasion=festival&amp;pageId=1&amp;">Festival</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_occasion_party#catId=10022&amp;occasion=party&amp;pageId=1&amp;">Party<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_occasion_wedding#catId=10022&amp;occasion=wedding&amp;pageId=1&amp;">Wedding</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_occasion_casual#catId=10022&amp;occasion=casual&amp;pageId=1&amp;">Casual</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_occasion_bridal#catId=10022&amp;occasion=bridal&amp;pageId=1&amp;">Bridal</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_occasion_ceremonial#catId=10022&amp;occasion=ceremonial&amp;pageId=1&amp;">Ceremonial</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/salwar-suits/?MID=megamenu_salwarsuits_occasion_seeall#catId=10022&amp;pageId=1&amp;">See All</a></li>
+								</ul>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/designer-anarkali-suits-high-price.html?MID=megamenu_salwar suits_MB_1"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/anarkali_Under_1499.jpg" alt=""></a>
+									<a href="http://www.craftsvilla.com/cvfeeds/pakistani-salwar-suits.html?MID=megamenu_salwar suits_MB_2"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/straight_suits.jpg" alt=""></a>
+								</div>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box long_image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/women-patiala-patiyala.html?MID=megamenu_salwar suits_MB_3"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/patialas170X320.jpg" alt=""></a>
+								</div>
+							</li>
+						</ul>
+					<div id="infinite_analytics_div_1"></div><div id="infinite_analytics_div_2"></div><div id="infinite_analytics_div_3"></div></div>
+				</div>
+			</li>
+			<li class="">
+				<a first-click="">LEHENGA <span class="first_arrow visible-xs visible-sm"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Shape.png" alt="" tille=""></span></a>
+				<div data-sub-menu="">
+					<div class="container sub-menu-wrapper">
+						<ul>
+							<li>
+								<a click-menu="">Top Selling <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=bollywood+lehenga#price=1000_2000&amp;pageId=1&amp;MID=megamenu_lehenga_topselling_bollywood ">Bollywood</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=designer+lehenga&amp;MID=megamenu_lehenga_topselling_designer">Designer</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=party+wear+lehenga&amp;MID=megamenu_lehenga_topselling_partywear">Party wear</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=wedding+lehenga#price=2000_5000&amp;pageId=1&amp;MID=megamenu_lehenga_topselling_wedding">Wedding Special</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehenga_topselling_pastel-lehengas#catId=10018&amp;lehenga-color=beige,pastel,pink,yellow&amp;pageId=1&amp;">Pastel Lehengas<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehenga_topselling_bridal-lehenga#catId=10018&amp;occasion=bridal&amp;pageId=1&amp;">Bridal Lehenga</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=lehenga&amp;MID=megamenu_lehenga_topselling_seeall#price=1000_2000&amp;pageId=1&amp;">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Occassion <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_occasion_festival#catId=10018&amp;occasion=festival&amp;pageId=1&amp;">Festival</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_occasion_party#catId=10018&amp;occasion=party&amp;pageId=1&amp;">Party</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_occasion_wedding#catId=10018&amp;occasion=wedding&amp;pageId=1&amp;">Wedding<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_occasion_casual#catId=10018&amp;occasion=casual&amp;pageId=1&amp;">Casual</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_occasion_bridal#catId=10018&amp;occasion=bridal&amp;pageId=1&amp;">Bridal</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_occasion_ceremonial#catId=10018&amp;occasion=ceremonial&amp;pageId=1&amp;">Ceremonial</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_occasion_seeall#catId=10018&amp;pageId=1&amp;">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Style<div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_style_designer#catId=10018&amp;style=designer&amp;pageId=1&amp;">Designer<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_style_traditional#catId=10018&amp;style=traditional&amp;pageId=1&amp;">Traditional</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_style_aline#catId=10018&amp;style=a line&amp;pageId=1&amp;">A Line</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_style_circular#catId=10018&amp;style=circular&amp;pageId=1&amp;">Circular</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_style_mermaidcut#catId=10018&amp;style=mermaid cut&amp;pageId=1&amp;">Mermaid Cut</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_style_straightcut#catId=10018&amp;style=straight cut&amp;pageId=1&amp;">Straight Cut</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_style_seeall#catId=10018&amp;pageId=1&amp;">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Fabric <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_fabric_georgette#catId=10018&amp;lehenga-fabric=georgette&amp;pageId=1&amp;">Georgette</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_fabric_chiffon#catId=10018&amp;lehenga-fabric=chiffon&amp;pageId=1&amp;">Chiffon</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_fabric_cotton#catId=10018&amp;lehenga-fabric=cotton&amp;pageId=1&amp;">Cotton</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_fabric_silk#catId=10018&amp;lehenga-fabric=silk&amp;pageId=1&amp;">Silk</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_fabric_net_tissue#catId=10018&amp;lehenga-fabric=chantilly net,net,super net,tissue&amp;pageId=1&amp;">Net / Tissue <span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_fabric_satin#catId=10018&amp;lehenga-fabric=satin&amp;pageId=1&amp;">Satin</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/lehangas/?MID=megamenu_lehengas_fabric_seeall#catId=10018&amp;pageId=1&amp;">See All</a></li>
+								</ul>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/jewellery-offers.html?MID=megamenu_accessories_MB_1"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/best_sellling_lehenga.jpg" alt=""></a>
+									<a href="http://www.craftsvilla.com/cvfeeds/pakistani-salwar-suits.html?MID=megamenu_salwar suits_MB_2"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/wedding_spl.jpg" alt=""></a>
+								</div>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box long_image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/ethnic-wear-starting-from-1299-20177.html?MID=megamenu_lehenga_MB_3"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Lovely_Lehenga_Sarees170X320.jpg" alt=""></a>
+								</div>
+							</li>
+						</ul>
+					<div id="infinite_analytics_div_1"></div><div id="infinite_analytics_div_2"></div><div id="infinite_analytics_div_3"></div></div>
+				</div>
+			</li>
+			<li class="">
+				<a first-click="">ACCESSORIES <span class="first_arrow visible-xs visible-sm"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Shape.png" alt="" tille=""></span></a>
+				<div data-sub-menu="">
+					<div class="container sub-menu-wrapper">
+						<ul>
+							<li>
+								<a click-menu="">Top Selling <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=kundan+jewellery&amp;MID=megamenu_accesories_topselling_kundan">Kundan Jewellery</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=temple+jewellery&amp;MID=megamenu_accessories_topselling_temple">Temple Jewellery<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=terracotta+jewellery#price=1_500&amp;newestSort=DESC&amp;pageId=1&amp;MID=megamenu_accesories_topselling_teracotta">Teracotta Jewellery</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=watches&amp;MID=megamenu_accesories_topselling_watches">Watches</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=bags&amp;MID=megamenu_accessories_topselling_bags">Bags</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=jhumkas#price=500_1000&amp;pageId=1&amp;MID=megamenu_accesories_topselling_jhumkas">Jhumkas</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=jewellery+sets&amp;MID=megamenu_accesories_topselling_sets#price=500_1000&amp;pageId=1&amp;">Jewellery Sets</a></li>
+									<li><a href="http://www.craftsvilla.com/jewellery/#catId=10002&amp;price=1000_2000&amp;pageId=1&amp;MID=megamenu_accesories_topselling_seeall">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Jewellery <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/jewellery/necklaces/?MID=megamenu_accessories_jewellery_necklaces">Necklaces</a></li>
+									<li><a href="http://www.craftsvilla.com/jewellery/earrings/?MID=megamenu_accessories_jewellery_earrings">Earrings<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/jewellery-jewelry/jewellery-sets.html?MID=megamenu_accessories_jwellery_jwellerysets">Jewellery Sets</a></li>
+									<li><a href="http://www.craftsvilla.com/jewellery/anklets/?MID=megamenu_accessories_jewellery_anklets">Anklets</a></li>
+									<li><a href="http://www.craftsvilla.com/jewellery/pendants/?MID=megamenu_accessories_jewellery_pendants">Pendants</a></li>
+									<li><a href="http://www.craftsvilla.com/jewellery/bracelets-bangles/?MID=megamenu_accessories_jewellery_bangles">Bangles</a></li>
+									<li><a href="http://www.craftsvilla.com/jewellery/mangalsutra/?MID=megamenu_accessories_jewellery_mangalsutra">Mangalsutra</a></li>
+									<li><a href="http://www.craftsvilla.com/jewellery/?MID=megamenu_accessories_jewellery_seeall">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Bags<div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/accessories/wallets-purses/clutches/?MID=megamenu_accessories_bags_clutches">Clutches<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/accessories/bags/potli-bags/?MID=megamenu_accessories_bags_potlibags">Potli Bags<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/accessories/bags/potli-bags/?MID=megamenu_accessories_bags_potlibags">Handbags</a></li>
+									<li><a href="http://www.craftsvilla.com/accessories/bags/jhola-bags/?MID=megamenu_accessories_bags_jholabags">Jhola Bags</a></li>
+									<li><a href="http://www.craftsvilla.com/accessories/wallets-purses/wallets/?MID=megamenu_accessories_bags_wallets">Wallets</a></li>
+									<li><a href="http://www.craftsvilla.com/accessories/bags/tote-bags/?MID=megamenu_accessories_bags_totebags">Tote Bags</a></li>
+									<li><a href="http://www.craftsvilla.com/accessories/bags/leather-bags/?MID=megamenu_accessories_bags_leatherbags">Leather Bags</a></li>
+									<li><a href="http://www.craftsvilla.com/accessories/bags/?MID=megamenu_accessories_bags_seeall">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Accessories <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/accessories/watches/?MID=megamenu_accessories_accessories_watches">Watches</a></li>
+									<li><a href="http://www.craftsvilla.com/accessories/wallets-purses/wallets/?MID=megamenu_accessories_accessories_wallets">Wallets</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/dupattas-stoles-scarves/dupattas/?MID=megamenu_accessories_accessories_dupattas">Dupattas<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/accessories/footwear/?MID=megamenu_accessories_accessories_footwear">Footwear</a></li>
+									<li><a href="http://www.craftsvilla.com/womens-clothing/dupattas-stoles-scarves/stoles/?MID=megamenu_accessories_accessories_stoles">Stoles</a></li>
+									<li><a href="http://www.craftsvilla.com/accessories/?MID=megamenu_accessories_accessories_seeall">See All</a></li>
+								</ul>
+							</li>
+
+							<li class="hidden-xs">
+								<div class="image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/jewellery-offers.html?MID=megamenu_accessories_MB_1"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/bestselling_2.jpg" alt=""></a>
+									<a href="http://www.craftsvilla.com/cvfeeds/gold-jewellery-designs-feeds.html?MID=megamenu_accessories_MB_2"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/musthaves.jpg" alt=""></a>
+								</div>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box long_image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/latest-offers-jewellery-20210.html?MID=megamenu_accessories_MB_3"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Min_50_Off_170X320.jpg" alt=""></a>
+								</div>
+							</li>
+						</ul>
+					<div id="infinite_analytics_div_1"></div><div id="infinite_analytics_div_2"></div><div id="infinite_analytics_div_3"></div></div>
+				</div>
+			</li>
+			<li class="">
+				<a first-click="">MEN'S FASHION <span class="first_arrow visible-xs visible-sm"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Shape.png" alt="" tille=""></span></a>
+				<div data-sub-menu="">
+					<div class="container sub-menu-wrapper">
+						<ul>
+							<li>
+								<a click-menu="">Men's Casual wear <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=kurta+men&amp;MID=megamenu_fashion&amp;lifestyle_casual_kurtas">Kurtas</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=men+shirt&amp;MID=megamenu_fashion&amp;lifestyle_casual_shirts">Shirts</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=t+shirt&amp;MID=megamenu_fashion&amp;lifestyle_casual_tshirts">Tshirts<span>New</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Men's Fashion <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=sherwani&amp;MID=megamenu_fashion&amp;lifestyle_mensfashion_sherwani">Sherwanis</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=kurta+pajama%27&amp;MID=megamenu_fashion&amp;lifestyle_mensfashion_kurtapyjama">Kurta Pyjamas<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=nehru+jacket&amp;MID=megamenu_fashion&amp;lifestyle_mensfashion_nehru-jacket">Nehru Jackets</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=indo-western&amp;MID=megamenu_fashion&amp;lifestyle_mensfashion_indo-western">Indo-western</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=mens#pageId=4&amp;MID=megamenu_fashion&amp;lifestyle_mensfashion_seall">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Bottom Wear <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=payjama&amp;MID=megamenu_fashion&amp;lifestyle_casual_pyjama">Pyjamas</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=dhotis&amp;MID=fashion&amp;lifestyle_casual_dhotis">Dhotis</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=lungi&amp;MID=fashion&amp;lifestyle_casual_lungis">Lungis</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=Pants+Men&amp;MID=fashion&amp;lifestyle_casual_pants">Pants</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Personal Interests <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/spiritual/?MID=megamenu_fashion&amp;lifestyle_personalinterests_spiritual">Spiritual</a></li>
+									<li><a href="http://www.craftsvilla.com/kids/?MID=megamenu_fashion&amp;lifestyle_personalinterests_kidswear">Kids Wear</a></li>
+								</ul>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/occasion-wear-for-men-20165.html?MID=megamenu_fashion&amp;lifestyle_MB_1"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Kurta-Pyjama-Set.jpg" alt=""></a>
+									<a href="http://www.craftsvilla.com/cvfeeds/summer-clothing-for-men-2016-20221.html?MID=megamenu_fashion&amp;lifestyle_MB_2"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/summerspecial.jpg" alt=""></a>
+								</div>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box long_image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/ethnic-casual-wear-for-men-20212.html?MID=megamenu_fashion&amp;lifestyle_MB_3"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Ethnic_Casuals_170X320.jpg" alt=""></a>
+								</div>
+							</li>
+						</ul>
+					<div id="infinite_analytics_div_1"></div><div id="infinite_analytics_div_2"></div><div id="infinite_analytics_div_3"></div></div>
+				</div>
+			</li>
+			<li class="">
+				<a first-click="">HOME DECOR <span class="first_arrow visible-xs visible-sm"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Shape.png" alt="" tille=""></span></a>
+				<div data-sub-menu="">
+					<div class="container sub-menu-wrapper">
+						<ul>
+							<li>
+								<a click-menu="">Top Selling <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/home-furnishing/bedsheets-throws/throws/?MID=megamenu_homedecor_topselling_beddings">Bedding</a></li>
+									<li><a href="http://www.craftsvilla.com/home-decor/paintings/?MID=megamenu_homedecor_topselling_artwallnpaintings">Art Wall n Paintings<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/home-decor/decoratives/?MID=megamenu_homedecor_topselling_decoratives">Decoratives</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Essentials <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/home-furnishing/bedsheets-throws/throws/?MID=megamenu_homedecor_essentials_bedsheets&amp;throws">Bedhseets &amp; Throws</a></li>
+									<li><a href="http://www.craftsvilla.com/home-furnishing/pillow-n-cushion-covers/pillow-covers/?MID=megamenu_homedecor_essentials_cushionandpillowcover">Cushion &amp; Pillow Covers</a></li>
+									<li><a href="http://www.craftsvilla.com/home-furnishing/quilts-blankets/quilts/?MID=megamenu_homedecor_essentials_quiltsandblankets">Quilts &amp; Blankets</a></li>
+									<li><a href="http://www.craftsvilla.com/home-furnishing/packing-covers.html/?MID=megamenu_homedecor_essentials_packingcovers">Packing Covers</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Furnishings<div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/home-furnishing/rugs/?MID=megamenu_homedecor_furnishings_carpets&amp;mats">Carpets &amp; Mats<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/home-furnishing/curtains/?MID=megamenu_homedecor_furnishings_curtains">Curtains</a></li>
+									<li><a href="http://www.craftsvilla.com/kitchen/dining-serving/tableware/?MID=megamenu_homedecor_furnishings_tableware">Tableware</a></li>
+									<li><a href="http://www.craftsvilla.com/home-furnishing/boxes-baskets/?MID=megamenu_homedecor_furnishings_boxes&amp;baskets">Boxes &amp; Baskets</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Decor <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/home-decor/clocks/?MID=megamenu_homedecor_decor_clocks">Clocks</a></li>
+									<li><a href="http://www.craftsvilla.com/home-decor/lamps-lightings/?MID=megamenu_homedecor_decor_lighting&amp;lamps">Lighting &amp; Lamps<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/home-decor/mirrors/?MID=megamenu_homedecor_decor_decorativemirrors">Decorative Mirrors</a></li>
+									<li><a href="http://www.craftsvilla.com/home-decor/photo-frames/?=MID=megamenu_homedecor_decor_photoframes">Photo Frames</a></li>
+									<li><a href="http://www.craftsvilla.com/home-decor/candles/?MID=megamenu_homedecor_decor_candles&amp;fragrances">Candles &amp; Fragrances <span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/home-decor/vases/?MID=megamenu_homedecor_decor_vases">Vases</a></li>
+								</ul>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/fancy-home-decor-products-20223.html?MID=megamenu_homedecor_MB_1"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/fancydecor.jpg" alt=""></a>
+									<a href="http://www.craftsvilla.com/cvfeeds/summer-clothing-for-men-2016-20221.html?MID=megamenu_fashion&amp;lifestyle_MB_2"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/cottonbedsheets_170x150.jpg" alt=""></a>
+								</div>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box long_image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/colourful-cushion-covers-20166.html?MID=megamenu_homedecor_MB_3"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/cushion_covers_170X320.jpg" alt=""></a>
+								</div>
+							</li>
+						</ul>
+					<div id="infinite_analytics_div_1"></div><div id="infinite_analytics_div_2"></div><div id="infinite_analytics_div_3"></div></div>
+				</div>
+			</li>
+			<li>
+				<a first-click="">BEAUTY &amp; LIFESTYLE <span class="first_arrow visible-xs visible-sm"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/Shape.png" alt="" tille=""></span></a>
+				<div data-sub-menu="">
+					<div class="container sub-menu-wrapper">
+						<ul>
+							<li>
+								<a click-menu="">Beauty Care <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/bath-beauty/haircare/?MID=megamenu_personalcare_beautycare_haircare">Hair Care<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/bath-beauty/skincare/?MID=megamenu_personalcare_beautycare_skincare">Skin Care<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/bath-beauty/makeup-cosmetics/?MID=megamenu_personalcare_beautycare_makeup">Makeup</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=eye+care&amp;MID=megamenu_personalcare_beautycare_eyecare">Eye Care</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=lip+care&amp;MID=megamenu_personalcare_beautycare_lipcare">Lip Care</a></li>
+									<li><a href="http://www.craftsvilla.com/bath-beauty/fragrances/?MID=megamenu_personalcare_beautycare_perfumes">Perfumes</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Body Care <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=shower+gel&amp;MID=megamenu_personalcare_bodycare_showergels">Shower Gels</a></li>
+									<li><a href="http://www.craftsvilla.com/bath-beauty/soaps/?MID=megamenu_personalcare_bodycare_soaps">Soaps</a></li>
+									<li><a href="http://www.craftsvilla.com/bath-beauty/oils/?MID=megamenu_personalcare_bodycare_oil">Bath &amp; Beauty Oil</a></li>
+									<li><a href="http://www.craftsvilla.com/bath-beauty/shower-gels/?MID=megamenu_personalcare_bodycare_bathsalts">Bath Salts</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=hygiene&amp;MID=megamenu_personalcare_bodycare_hygiene">Hygiene</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=body+care&amp;MID=megamenu_personalcare_bodycare_seeall">See All</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Food <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=syrup&amp;MID=megamenu_personalcare_food_syrups">Syrups</a></li>
+									<li><a href="http://www.placeoforigin.in/staples/tea-24?MID=megamenu_beauty&amp;lifestyle_healthcare_tea">Tea<span>New</span></a></li>
+									<li><a href="http://www.placeoforigin.in/staples/coffee?MID=megamenu_beauty&amp;lifestyle_healthcare_coffee">Coffee</a></li>
+									<li><a href="http://www.craftsvilla.com/food-health/sweets-chocolates/chocolates/?MID=megamenu_personalcare_food_chocolates">Sweets and Chocolates</a></li>
+									<li><a href="http://www.craftsvilla.com/food-health/herbs-spices/?MID=megamenu_personalcare_food_herbs-spices">Herbs and Spices</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=dry+fruits%5D#pageId=4&amp;MID=megamenu_personalcare_food_dryfruits">Dry Fruits</a></li>
+									<li><a href="http://www.craftsvilla.com/food-health/pickles-jams-chutneys/pickles/?MID=megamenu_personalcare_food_pickles">Pickles</a></li>
+									<li><a href="http://www.craftsvilla.com/food-health/pickles-jams-chutneys/chutney/?MID=megamenu_personalcare_chutneys">Chutneys</a></li>
+								</ul>
+							</li>
+							<li>
+								<a click-menu="">Health care <div class="visible-xs acc-arrow"><span>&nbsp;</span><span>&nbsp;</span></div></a>
+								<ul>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=ayurvedic&amp;MID=megamenu_personalcare_healthcare_ayurvedic">Ayurvedic<span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=massage&amp;MID=megamenu_personalcare_healthcare_massage&amp;workout">Massage and Workout</a></li>
+									<li><a href="http://www.craftsvilla.com/food-health/ayurvedic-health/health-supplements/?MID=megamenu_personalcare_healthcare_supplements">Supplements</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=weight+loss&amp;MID=megamenu_beauty&amp;lifestyle_healthcare_weightcontrol">Weight Control</a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=sexual&amp;MID=megamenu_beauty&amp;lifestyle_healthcare_sexual-wellness">Sexual Wellness <span>New</span></a></li>
+									<li><a href="http://www.craftsvilla.com/searchresults?searchby=product&amp;q=health&amp;MID=megamenu_beauty&amp;lifestyle_healthcare_seall">See All</a></li>
+								</ul>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/fancy-home-decor-products-20223.html?MID=megamenu_homedecor_MB_1"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/facialkits_170x150.jpg" alt=""></a>
+									<a href="http://www.craftsvilla.com/cvfeeds/summer-clothing-for-men-2016-20221.html?MID=megamenu_fashion&amp;lifestyle_MB_2"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/skincare_170x150.jpg" alt=""></a>
+								</div>
+							</li>
+							<li class="hidden-xs">
+								<div class="image_box long_image_box">
+									<a href="http://www.craftsvilla.com/cvfeeds/personal-care-products-20168.html?MID=megamenu_personalcare_MB_3"><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/best_beautideals_170X320.jpg" alt=""></a>
+								</div>
+							</li>
+						</ul>
+					<div id="infinite_analytics_div_1"></div><div id="infinite_analytics_div_2"></div><div id="infinite_analytics_div_3"></div></div>
+				</div>
+			</li>
+			<li role="currency" class="visible-xs border-top">
+				<a class="change-currency">Change Currency
+					<!--<span><img src="img/india.svg" alt="">INR</span>-->
+					<span id="mob-currencycode">INR</span>
+				</a>
+			</li>
+			<li role="call" class="visible-xs border-top"><a><span><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/callm.svg" alt=""></span>Call <strong>022 61579090</strong> for any assistance</a></li>
+			<li role="Download-app" class="visible-xs border-top">
+				<div class="col-xs-12 nopadding">
+					<ul data-app="">
+						<li><a href="https://play.google.com/store/apps/details?id=com.craftsvilla.app&amp;hl=en"><span><img ng-src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/app-icon-m.svg" alt=""></span> Download App</a></li>
+						<li><a href="/sell">Sell on Craftsvilla</a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	<div id="infinite_analytics_div_1"></div><div id="infinite_analytics_div_2"></div><div id="infinite_analytics_div_3"></div></div>
+</div>
+<!-- //  Mega Menu end -->
+<div class="row-fluid">
+	<div class="container product_container  cart-pad-lr5-xs">
+		<!-- Product page breadcrumbs starts here -->
+		<!-- new checkout design starts here -->
+		<div class="col-xs-12  col-md-12 buyer-section hidden-sm hidden-xs" data-toggle="modal" data-target="#myModal">
+			<img class="buyer-icon" src="{{LSTATIC}}skin/frontend/default/craftsvilla2015/img/sheild.png">
+			<span class="buyer-text"><b>100%</b> <span class="buyer-regular-text regular-text">Buyer Protection</span> |
+			<span class="secure-text regular-text">Secure Payments &amp; Easy Returns | <span class="learn-text regular-text">Learn More</span></span></span>
+        </div>
+
+        <div class="col-xs-12 nopadding" check-out="">
+            <div class="header"> my cart |  {{ items }} item(s) </div>
+            <!-- checkout header ends -->
+
+            <div class="col-xs-12 check-out-msg" ng-if="outOfStockProducts.length">
+                <div class="check-out-msg-txt">Some itmes in your cart are <strong>'out of stock'</strong></div>
+                <a href="javascript:void(0)" class="check-out-msg-btn" ng-click="removeOutOfStockProducts()">Remove</a>
+            </div>
+            <div class="col-xs-12 check-out-msg" ng-if="inStockNotCod.length">
+                <div class="check-out-msg-txt-lrg">Few Items in your cart are not available for <strong>CASH ON DELIVERY.</strong> You can still proceed and do Online Payment.</div>
+            </div>
+
+
+            <div class="col-xs-12 check-out-msg" ng-if="itemRemoved == 1">
+                <div class="check-out-msg-txt"> Item removed from your cart</div>
+                <div class="check-out-msg-btn" ng-click="addToCart()">undo</div>
+            </div>
+            <div empt-cart="" ng-if="items == '0' || noItemsPresent">
+                <div class="empty-head">YOUR CART IS EMPTY</div>
+                <div class="empty-txt">Start shopping with options below.</div>
+                <div class="empty-lst">
+                    <ul>
+                        <li><a target="_self" href="http://www.craftsvilla.com/womens-clothing/sarees">Sarees</a></li>
+                        <li><a target="_self" href="http://www.craftsvilla.com/womens-clothing/salwar-suits">Salwar Suits</a></li>
+                        <li><a target="_self" href="http://www.craftsvilla.com/womens-clothing/lehangas">Bridal Lehenga</a></li>
+                        <li><a target="_self" href="http://www.craftsvilla.com/jewellery">Jewellery</a></li>
+                    </ul>
+                </div>
+                <div class="contn-shpng" ng-click="continueShopping()">CONTINUE SHOPPING</div>
+            </div>
+            <div class="col-xs-12 nopadding left-panel" ng-if="items != '0'">
+                <div class="cart-items-card out-of-stock-items" ng-repeat="product in outOfStockProducts" ng-disabled="true">
+                    <!-- <a href="javascript:void(0)" class="cart-details-close" ng-click="removeProductFromCart(product.product_id,product)"><img src="images/delete-icon.png" width:'100%'></a> -->
+                    <div class="cart-items-cont">
+                        <div class="cart-img-cont">
+                            <a target="_self" ng-href="{{product.url}}"><img ng-src="{{IMGHOST}}/thumb/216x216{{ product.product_image }}" class="img-responsive"></a>
+                        </div>
+                        <div class="cart-details-cont">
+                            <div class="col-xs-12 nopadding  c-itm-name">{{ product.product_name }}</div>
+                               <div class="col-xs-12 nopadding margin-top-5-px minimum-height-15px">
+                              		<div ng-if="data.variant" ng-bind-html="getProductMetaData(data.variant, { 'key': 'Size', 'name': 'Size'}, { 'key': 'Color', 'name': 'Color'})"></div>
+                              </div>
+                            <div class="col-xs-6 nopadding  c-itm-qty">
+                                <div class="text">Qty:</div>
+                                <!-- <div class="dropdown chck-drpdwn">
+                                    <button class="btn btn-default dropdown-toggle chck-drpdwn-btn" style="border-radius:2px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> 1 <span class="caret chck-caret" style=""></span> </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                    </ul>
+                                </div> -->
+                                <select ng-init="initializeQuantity(product)" ng-model="product.quantity" class="form-control width-auto" ng-options="opt as opt.id for opt in options" ng-change="updateQuantity(product.quantity, product.product_id,product)" ng-disabled="true">
+                                </select>
+                            </div>
+
+                            <div class="col-xs-6 nopadding  c-itm-price pull-right">
+
+
+                                <div style="float:right;">{{ product.product_price | number: 0 }}</div>
+                                <span class="currency-code" ng-bind-html="getCurrencySymbol(currencyCode)"></span>
+                             </div>
+                            <div class="seller-note hidden-xs" ng-if="!product.seller_note" ng-disabled="true">add a note to seller</div>
+                        </div>
+                    </div>
+                    <div class="cart-seller-cont hidden-lg">
+                        <form >
+                            <div class="text out-o-stk">out of stock</div>
+                        </form>
+                    </div>
+                    <div class="cart-seller-cont">
+                        <div class="text hidden-lg" ng-if="!product.seller_note" ng-disabled="true">add a note to seller</div>
+                        <div class="open-cont" ng-show= "product.showFormNote" ng-disabled="true">
+                            <form name="sellerForm{{$index}}" ng-submit="addNoteToSeller($index, product.product_id, product.sellernote, product)" novalidate>
+                                <div ng-class="{ 'error' : (sellerForm{{$index}}.sellernote.$invalid && !sellerForm{{$index}}.sellernote.$pristine) || (sellerForm{{$index}}.$submitted && sellerForm{{$index}}.sellernote.$error.required) }">
+                                    <p> Add note to seller </p>
+                                    <textarea class="seller-texta" ng-model="product.sellernote" name="sellernote" placeholder="Add a note here" ng-minlength="5" required></textarea>
+                                    <div ng-show="sellerForm{{$index}}.$submitted || sellerForm{{$index}}.sellernote.$touched">
+                                        <span ng-show="sellerForm{{$index}}.sellernote.$error.required" class="error">Seller note required.</span>
+                                    </div>
+                                </div>
+                                <button type="submit" class="buttons b-border t-m-10">save</button>
+                            </form>
+                            <span class="buttons l-m-20 t-m-10 m-right-20" ng-click="hideNoteToSeller(product)">cancel</span>
+                        </div>
+                        <div class="open-cont" ng-if="!!product.seller_note" ng-disabled="true">
+                            <p>{{product.seller_note}}</p>
+                            <button class="buttons  b-border t-m-10">edit</button>
+                            <a href="javascript:void(0)" class="buttons l-m-20 t-m-10 m-left-20">remove</a>
+                        </div>
+                    </div>
+                    <div class="overlay-out-stock" ng-show="product.waitingCartItem">
+                        <img src="images/loader.gif" class="loader-cartitem">
+                    </div>
+
+                </div>
+                <!-- cart-items-card ends -->
+
+                <!--ng repeat for cod products : 0 for cod as in api call-->
+
+                <div class="cart-items-card t-m-10" ng-repeat="data in inStockCod">
+                    <div class="cart-items-cont">
+                        <div class="cart-img-cont">
+                            <a target="_self" ng-href="{{data.url}}"><img ng-src="{{IMGHOST}}/thumb/216x216{{data.product_image}}" class="img-responsive"></a>
+                        </div>
+                        <div class="cart-details-cont">
+                        	<a href="javascript:void(0)" class="cart-details-close" ng-click="removeProductFromCart(data.product_id,data)"><img src="images/delete-icon.png" width:'100%'></a>
+                            <div class="col-xs-12 nopadding c-itm-name">{{data.product_name}}</div>
+                            <div class="col-xs-12 nopadding margin-top-5-px minimum-height-15px">
+                          	  <div ng-if="data.variant" ng-bind-html="getProductMetaData(data.variant, { 'key': 'Size', 'name': 'Size'}, { 'key': 'Color', 'name': 'Color'})"></div>
+                        	</div>
+
+                            <div class="col-xs-6 nopadding c-itm-qty">
+                                <div class="text">Qty:</div>
+                                <!-- <div class="dropdown chck-drpdwn">
+                                    <button class="btn btn-default dropdown-toggle chck-drpdwn-btn sdsd" style="border-radius:2px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{ data.product_qty }} <span class="caret chck-caret"></span> </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                    </ul>
+                                </div> -->
+
+                                <select ng-init="initializeQuantity(data)" ng-model="data.quantity" class="form-control width-auto" ng-options="opt as opt.id for opt in options" ng-change="updateQuantity(data.quantity, data.product_id,data)">
+                                </select>
+
+                            </div>
+                            <div class="col-xs-6 nopadding c-itm-price pull-right">
+
+                                <div style="float:right;">{{data.product_price | number: 0}}</div>
+								<span class="currency-code" ng-bind-html="getCurrencySymbol(currencyCode)"></span>
+			              </div>
+                            <div class="col-xs-12 nomargin nopadding seller-note hidden-xs" ng-click="showNoteToSeller(data)" ng-if="!data.seller_note">add a note to seller</div>
+                        </div>
+                    </div>
+                    <div class="cart-seller-cont">
+                        <div class="text hidden-lg" ng-click="showNoteToSeller(data)" ng-if="!data.seller_note">add a note to seller</div>
+                        <div class="open-cont" ng-show= "data.showFormNote">
+                            <form name="sellerForm{{$index}}" ng-submit="addNoteToSeller($index, data.product_id, data.sellernote, data)" novalidate>
+                                <div ng-class="{ 'error' : (sellerForm{{$index}}.sellernote.$invalid && !sellerForm{{$index}}.sellernote.$pristine) || (sellerForm{{$index}}.$submitted && sellerForm{{$index}}.sellernote.$error.required) }">
+                                    <p> Add note to seller </p>
+                                    <textarea class="seller-texta" ng-model="data.sellernote" name="sellernote" placeholder="Add a note here" ng-minlength="5" required></textarea>
+                                    <div ng-show="sellerForm{{$index}}.$submitted || sellerForm{{$index}}.sellernote.$touched">
+                                        <span ng-show="sellerForm{{$index}}.sellernote.$error.required" class="error">Seller note required.</span>
+                                    </div>
+                                </div>
+                                <button type="submit" class="buttons b-border t-m-10">save</button>
+                            </form>
+                            <span class="buttons l-m-20 t-m-10 m-right-20" ng-click="hideNoteToSeller(data)">cancel</span>
+                        </div>
+                        <div class="open-cont" ng-if="!!data.seller_note" ng-hide="data.showFormNote">
+                            <p>{{data.seller_note}}</p>
+                            <button class="buttons  b-border t-m-10" ng-click="updateNoteToSeller(data,data.seller_note)">edit</button>
+                            <a href="javascript:void(0)" class="buttons l-m-20 t-m-10 m-left-20" ng-click="removeNoteToSeller(data)">remove</a>
+                        </div>
+                    </div>
+
+                    <div class="overlay-out-stock" ng-show="data.waitingCartItem">
+                        <img src="images/loader.gif" class="loader-cartitem">
+                    </div>
+                </div>
+
+                <!--ng repeat for non cod products : 1 for non cod as in api call-->
+                <div class="col-xs-8 nopadding red " ng-if="inStockNotCod.length">Items without cash on delivery</div>
+                <div class="col-xs-4 nopadding pull-right text-right"><a href="javascript:void(0)" ng-if="inStockNotCod.length" class="nopadding clrrouge " ng-class="inStockNotCod.length? ' ':'col-xs-12'" ng-click="removeAllNonCodItems()">Remove All</a></div>
+                <div class="cart-items-card t-m-10" ng-repeat="data in inStockNotCod">
+
+                    <div class="cart-items-cont">
+
+                        <div class="cart-img-cont">
+                            <a target="_self" ng-href="{{data.url}}"><img ng-src="{{IMGHOST}}/thumb/216x216{{data.product_image}}" class="img-responsive"></a>
+                        </div>
+                        <div class="cart-details-cont">
+                        	<a href="javascript:void(0)" class="cart-details-close" ng-click="removeProductFromCart(data.product_id,data)"><img src="images/delete-icon.png" width:100%></a>
+                            <div class="col-xs-12 nopadding c-itm-name">{{data.product_name}}</div>
+                             <div class="col-xs-12 nopadding margin-top-5-px minimum-height-15px">
+                             	<div ng-if="data.variant" ng-bind-html="getProductMetaData(data.variant, { 'key': 'Size', 'name': 'Size'}, { 'key': 'Color', 'name': 'Color'})"></div>
+                             </div>
+                            <div class="col-xs-6 nopadding c-itm-qty">
+                                <div class="text">Qty:</div>
+                                <!-- <div class="dropdown chck-drpdwn">
+                                    <button class="btn btn-default dropdown-toggle chck-drpdwn-btn sdsd" style="border-radius:2px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{ data.product_qty }} <span class="caret chck-caret"></span> </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                    </ul>
+                                </div> -->
+                                <select ng-init="initializeQuantity(data)" ng-model="data.quantity" class="form-control width-auto" ng-options="opt as opt.id for opt in options" ng-change="updateQuantity(data.quantity, data.product_id,data)">
+                                </select>
+
+                            </div>
+                            <div class="col-xs-6 nopadding c-itm-price pull-right">
+
+                                <div style="float:right;">{{data.product_price | number: 0}}</div>
+                                <span class="currency-code" ng-bind-html="getCurrencySymbol(currencyCode)"></span>
+                              </div>
+                            <div class="col-xs-12 nomargin nopadding seller-note hidden-xs" ng-click="showNoteToSeller(data)" ng-if="!data.seller_note">add a note to seller</div>
+
+                        </div>
+                    </div>
+                    <div class="cart-seller-cont">
+                        <div class="text hidden-lg" ng-click="showNoteToSeller(data)" ng-if="!data.seller_note">add a note to seller</div>
+                        <div class="open-cont" ng-show= "data.showFormNote">
+                            <form name="sellerForm{{$index}}" ng-submit="addNoteToSeller($index, data.product_id, data.sellernote,data)" novalidate>
+                                <div ng-class="{ 'error' : (sellerForm{{$index}}.sellernote.$invalid && !sellerForm{{$index}}.sellernote.$pristine) || (sellerForm{{$index}}.$submitted && sellerForm{{$index}}{{$index}}.sellernote.$error.required) }">
+                                    <p> Add note to seller </p>
+                                    <textarea class="seller-texta" ng-model="data.sellernote" name="sellernote" placeholder="Add a note here"  required></textarea>
+                                    <div ng-show="sellerForm{{$index}}.$submitted || sellerForm{{$index}}.sellernote.$touched">
+                                        <span ng-show="sellerForm{{$index}}.sellernote.$error.required" class="error">Seller note required.</span>
+                                    </div>
+                                </div>
+                                <button type="submit" class="buttons b-border t-m-10">save</button>
+                            </form>
+                            <span class="buttons l-m-20 t-m-10 m-right-20 close-note" ng-click="hideNoteToSeller(data)">cancel</span>
+                        </div>
+                        <div class="open-cont" ng-if="!!data.seller_note" ng-hide="data.showFormNote">
+                            <p>{{data.seller_note}}</p>
+                            <button class="buttons  b-border t-m-10" ng-click="updateNoteToSeller(data,data.seller_note)">edit</button>
+                            <a href="javascript:void(0)" class="buttons l-m-20 t-m-10 m-left-20" ng-click="removeNoteToSeller(data)">remove</a>
+                        </div>
+                    </div>
+                    <div class="overlay-out-stock" ng-show="data.waitingCartItem">
+                        <img src="images/loader.gif" class="loader-cartitem">
+                    </div>
+                </div>
+                <!--ng repeat for cod products : 0 for cod as in api call ends here-->
+
+                <!-- cart-items-card ends -->
+
+                <div class="col-xs-12 nopadding hidden-xs" ng-if="items != '0'">
+                    <div class="c-continue-shpng button" ng-click="continueShopping()"> <img class="c-arrw" src="images/back-CTA-icon.png"> Continue Shopping    </div>
+                    <div class="order-total">
+                        <div class="pull-left inln-blck">Total Payable( {{ items }} Item(s))</div>
+                        <div class="o-t-amt pull-right inln-blck">
+                            <div class="pull-right inln-blck"> {{ grandTotal | number: 0}}</div>
+                            <span class="currency-code" ng-bind-html="getCurrencySymbol(currencyCode)"></span>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <!-- checkout left panel ends -->
+
+            <!--coupon code proceed to checkout starts here-->
+            <div class="col-xs-12 nopadding right-panel" ng-if="items != '0'">
+            	<div class="col-xs-12 coupon-cont">
+                	 <div class="coupon-text" ng-show="successCoupon">Coupon
+                        <span class="colorblack"><strong>"{{couponCode}}"</strong></span> applied
+                        <!--<span class="clrrouge">Remove</span>-->
+                        <a href="javascript:void(0)" ng-click="removeCoupon(couponCode)"><span class="clrrouge">Remove</span></a>
+                    </div>
+
+                    <div ng-hide="successCoupon">
+                    	<div ng-hide="successCoupon || couponCodeHeader" class="coupon-code-header">Have a Coupon Code? <a ng-click="showCouponCont()"><span class="clrrouge"><strong>Apply Here</strong></span></a></div>
+                    	<div ng-show="successCouponDetails">
+                        <div class="cc-header">Enter Coupon Code</div>
+                        <div class="col-xs-12 nopadding">
+                            <form class="coupon-cont-form" name="couponForm" ng-submit="applyCoupon()" novalidate>
+                                <div>
+                                    <input type="text" class="col-xs-8 coupon-input" name="couponcode" ng-model="coupon.couponcode" ng-class="{ 'red-border' : (couponForm.couponcode.$invalid && !couponForm.couponcode.$pristine) || (couponForm.$submitted && couponForm.couponcode.$error.required) }" required id="couponCodeTextBox">
+                                </div>
+                                <button type="submit" class="col-xs-4 coupon-c-button" id="couponCodeApplyButton">
+                                    <span ng-show="!couponWait">APPLY</span>
+                                    <img ng-show="couponWait"  src="images/loader.gif" class="loader"/>
+                                </button>
+                                <div ng-show="couponForm.$submitted || couponForm.$invalid" class="col-xs-12">
+                                    <span class="red">{{couponMessage}}</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 order-cont" ng-if="items != '0'">
+                    <div class="o-heading">order summary</div>
+                    <!-- order summary new change -->
+                    <div>
+    <div class="o-left-cont">
+        <p>Sub Total</p>
+    </div>
+    <div class="o-right-cont">
+        <div class="ord-amt" ng-show="!waitingCartDatails">
+            <!--svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+                <path d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+            </svg-->
+            <span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCode)"></span>
+            <div class="pull-right">{{ subTotal | number: 0 }}</div>
+        </div>
+        <div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+    </div>
+</div>
+
+<div>
+	 <div class="o-left-cont">
+		<p ng-show="successCoupon">Coupon Applied ({{couponCode}})</p>
+		<p class="green" ng-show="successCoupon">You saved {{discount | number: 0}}%</p>
+	</div>
+	<div class="o-right-cont">
+	<div class="ord-amt" ng-show="successCoupon && !waitingCartDatails">
+		<span class="pull-left"> &#45; </span>
+		<span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCode)"></span>
+		<!--svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+			<path d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+		</svg-->
+		{{ totalDiscount | number: 0 }}
+	</div>
+	<div class="ord-amt" ng-show="waitingCartDatails && successCoupon"><img src="images/textloading.gif" class="textloading"></div>
+	</div>
+</div>
+<div>
+	<div class="o-left-cont">
+		<p>Shipping</p>
+	</div>
+	<div class="o-right-cont">
+		<div class="ord-amt" ng-show="!waitingCartDatails">
+			<span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCode)"></span>
+			{{ shippingAmount | number: 0 }}
+		</div>
+		<div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+	</div>
+</div>
+<div>
+	<div class="o-left-cont">
+		<p class="total pad-t-7"><b>Total Payable</b></p>
+	</div>
+	<div class="o-right-cont">
+		<div class="ord-amt total" ng-show="!waitingCartDatails">
+		<span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCode)"></span>
+		{{ grandTotal | number: 0 }}
+		</div>
+		<div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+	</div>
+</div>
+
+<!-- order summary new change ends -->
+					<!--  <div class="o-left-cont">
+						<p>Sub Total</p>
+						<p ng-show="successCoupon">Coupon Applied ({{couponCode}})</p>
+						<p class="green" ng-show="successCoupon">You saved {{discount | number: 0}}%</p>
+						<p>Shipping</p>
+						<p class="total pad-t-7"><b>Total Payable</b></p>
+					</div>
+					<div class="o-right-cont">
+						<div class="ord-amt" ng-show="!waitingCartDatails">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+								<path d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+							</svg>
+							<div class="pull-right">{{ subTotal | number: 0 }}</div>
+						</div>
+
+						<div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+
+						<div class="ord-amt" ng-show="successCoupon && !waitingCartDatails">
+							<span class="pull-left"> &#45; </span>
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+								<path d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+							</svg>
+							{{ totalDiscount | number: 0 }}
+						</div>
+
+						<div class="ord-amt" ng-show="waitingCartDatails && successCoupon"><img src="images/textloading.gif" class="textloading"></div>
+						<div class="ord-amt" style="margin-top:{{successCoupon ? '26px' : '0px'}}" >
+
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+								<path d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+							</svg>
+							{{ shippingAmount | number: 0 }}
+						</div>
+						<div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+
+						<div class="ord-amt total" ng-show="!waitingCartDatails">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+								<path d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+							</svg>
+							{{ grandTotal | number: 0 }}
+						</div>
+						<div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+					</div>
+				-->
+					<div class="col-xs-12 divider" ></div>
+
+					<button class="btn col-xs-12 procd-to-checkout" ng-click="proceedToCheckout()" id="proccedToCheckoutBtn">
+						<span ng-show="!proceedToCheckoutLoader" >
+							Proceed to checkout<img style="margin-left:5px;height:auto; width:5%;margin-bottom:5px;" src="images/Checkout-CTA-icon.png">
+						</span>
+						<img ng-show="proceedToCheckoutLoader"  src="images/loader.gif" class="small-loader"/>
+					</button>
+				</div>
+			</div>
+			<!-- checkout right panel ends -->
+		</div>
+		<!-- new checkout design ends here -->
+		<div class="clearfix"></div>
+		<div class="fancybox" id="successmessage" style="display:none">
+			<p class="colorgreen mt20">Your message has been sent</p>
+		</div>
+		<div class="fancybox" id="notsuccessmessage" style="display:none">
+			<p class="colorred mt20">Image size should be less than 2MB</p>
+		</div>
+		<div class="fancybox" id="filetypeext" style="display:none">
+			<p class="colorred mt20">It is not valid file type</p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+</script>

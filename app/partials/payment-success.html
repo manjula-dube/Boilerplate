@@ -1,0 +1,199 @@
+<!--// Header -->
+<div role-header class="container-fluid nopadding" ng-if="!isAndroid">
+    <div role-nav class="container">
+        <div class="col-xs-6 nopadding" role="logo">
+            <img role="back" src="images/Shape.png" alt="" title="" ng-click="goBack()">
+            <a href="http://www.craftsvilla.com/" target="_self" title=""><img class="logo" src="/images/cv_logo.svg" alt="" title=""></a>
+            <span class="hidden-xs">Call 022 61579090 for any assistance</span>
+        </div>
+        <div class="col-xs-6 nopadding buyerProtection">
+            <ul>
+                <li class="visible-xs">100% Buyer Protection<br>Secure Payments</li>
+                <li class="hidden-xs">100% BUYER<br>PROTECTION</li>
+                <li class="hidden-xs"><strong>SECURE</strong><br>PAYMENTS</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--// Header -->
+<!-- order success start -->
+<div class="container nopadding" data-ng-init="onSuccessDetails()" >
+    <div class=" nopadding" order-thank-cont="">
+        <div class="col-xs-12  nopadding order-header">
+            <div class="thnku">
+                <div class="t-img"><img src="images/tick.png" width="100%"></div>
+                <div class="t-txt">Thank You</div>
+            </div>
+            <div class="succ-txt">Your order has been placed successfully.</div>
+
+        </div>
+    </div>
+
+
+    <!-- recommended  products start-->
+    <div class="container-fluid nopadding" order-success-cont ng-hide="true">
+        <div class="item-chunk-xtra-padding">
+            <div class="col-xs-12 nopadding" id="view_recommended_products">
+                <div class="clearfix"></div>
+                <h4 class="borderbottom product_name text-center">Recommended Products</h4>
+                <div class="flex-center">
+                    <div class="col-xs-6 col-md-3 product mob_padding" ng-repeat="product in recommendProducts">
+                        <div class="product-image-container">
+                            <a
+                                    href="/catalog/product/view/id/2224370/s/clothsvilla-self-designed-attractive-choli-8"
+                                    title="Clothsvilla Self Designed Attractive Choli-8"
+                                    onclick="dataLayer.push({&quot;event&quot;:&quot;ProductDetailsViewedEvent&quot;,&quot;eventName&quot;:&quot;ProductDetailsViewed&quot;,&quot;eventAction&quot;:&quot;4999&quot;,&quot;eventLabel&quot;:&quot;2224370&quot;,&quot;discountPercentage&quot;:&quot;50&quot;,&quot;category&quot;:&quot;NA&quot;,&quot;subCategory&quot;:&quot;NA&quot;,&quot;price&quot;:&quot;4999&quot;,&quot;productId&quot;:&quot;2224370&quot;,&quot;positionOnPage&quot;:&quot;1&quot;});">
+                                <img ng-src="{{IMGHOST}}{{product.image}}" alt="Clothsvilla Self Designed Attractive Choli-8" title="{{product.name}}" class="product-image"></a>
+                        </div>
+                        <div class="product-details-container col-xs-12">
+                            <a href="/catalog/product/view/id/2224370/s/clothsvilla-self-designed-attractive-choli-8">
+                                <div class="product-name truncate">{{product.name}}</div>
+                            </a>
+                            <a href="/clothsvilla" title="Clothsvilla.com" target="_blank">
+                                <div class="vendor-name">{{product.vendor_name}}</div>
+                            </a>
+                            <div class="price-container col-xs-12 nopadding">
+                                <div class="col-xs-6 col-md-8 nopadding">
+                                    <div class="col-xs-12 col-md-6 discounted-price price nopadding" ng-show="product.discount_available">Rs{{product.discounted_price}}</div>
+                                    <div class="col-xs-12 col-md-6 original-price price nopadding">Rs
+                                        <s>
+                                            {{product.price}}</s>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 save-percent nopadding">
+                                    Save 50%
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                                class="wishit text-center"
+                                onclick="dataLayer.push({&quot;event&quot;:&quot;ProductBookmarkedEvent&quot;,&quot;eventName&quot;:&quot;ProductBookmarked&quot;,&quot;productId&quot;:&quot;2224370&quot;,&quot;type&quot;:&quot;addedToWishlist&quot;,&quot;category&quot;:&quot;NA&quot;,&quot;subCategory&quot;:&quot;NA&quot;,&quot;source&quot;:&quot;productDetailsPage&quot;});">
+                            <i class="fa fa-heart-o fa-2x" id="wishicon-2224370"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- recommended products ends -->
+    <div class="col-xs-12  " order-success-cont="">
+        <div class="col-xs-12 nopadding detls-cont">
+            <div class="dtl-txt">Details</div>
+            <div class="ttl-no-ord">Order number:
+                {{ orderNo }}
+            </div>
+        </div>
+        <div class="col-xs-12  nopadding details-cont" ng-repeat="order in orderDetails">
+            <div class="col-xs-12  nopadding">
+                <div class="detail-text">{{ order.product_name }}</div>
+                <div class="detail-amt">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+                        <path
+                                d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+                    </svg>
+                    <strong>{{order.product_price | number : 0 }}</strong>
+                </div>
+            </div>
+            <div class="col-xs-12  nopadding detail-qty"><strong>Quantity</strong>:
+               <strong>{{ order.product_qty | number : 0 }}</strong>
+               <strong ng-if="order.variants" class="pipe">|</strong>
+               <strong ng-if="order.variants" ng-bind-html="getProductMetaData(order.variants, { 'key': 'Size', 'name': 'Size'}, { 'key': 'Color', 'name': 'Color'} )"></strong>
+            </div>
+        </div>
+
+        <div class="col-xs-12  nopadding details-cont">
+            <div class="col-xs-12  nopadding">
+                <div class="detail-text">Sub Total
+                </div>
+                <div class="detail-amt">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+                        <path
+                                d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+                    </svg>
+                    {{ order.sub_total | number : 0 }}</div>
+
+            </div>
+            <div class="col-xs-12  nopadding m-t-8px" ng-if="order.coupon_code">
+                <div class="detail-text ">
+                    Coupon Applied (CRAFTSLOVE)</div>
+                <div class="detail-amt" >
+                    -
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+                        <path
+                                d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+                    </svg>
+                    {{ order.totol_discount | number : 0 }}
+                    </div>
+
+            </div>
+            <div class="col-xs-12  nopadding m-t-8px">
+                <div class="detail-text ltr-spcng">Shipping</div>
+                <div class="detail-amt">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+                        <path
+                                d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+                    </svg>
+                    {{ order.shipping_amount | number : 0 }}</div>
+
+            </div>
+            <div class="col-xs-12  nopadding m-t-8px m-b-10px">
+                <div class="detail-text color-black">
+                    <strong>Total Payable</strong>
+                </div>
+                <div class="detail-amt color-black">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+                        <path
+                                d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+                    </svg>
+                    <strong>
+                        {{ order.grand_total | number : 0 }}
+                    </strong>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-xs-12  nopadding details-cont p-t-b-5px">
+            <div class="col-xs-12  nopadding">
+                <div class="detail-text  ln-hgt-2-6 ltr-spcng">SHIPPING DETAILS</div>
+            </div>
+            <div class="col-xs-12  nopadding">
+                <div class="detail-text  font16 font14-xs  ln-hgt-2-6 gryeish-brown">
+                    <strong>{{shippingDetails.firstname}}
+                        {{shippingDetails.lastname}}</strong>
+                </div>
+            </div>
+            <div class="col-xs-12  nopadding">
+                <div class="detail-text  font16 font14-xs ">{{shippingDetails.company}},
+                    {{shippingDetails.street}},
+                    {{shippingDetails.city}},
+                    {{shippingDetails.region}}
+                    -
+                    {{order.postcode}}</div>
+            </div>
+            <div class="col-xs-12  nopadding">
+                <div class="detail-text  font16 font14-xs  ln-hgt-2-6">{{ shippingDetails.telephone }}</div>
+            </div>
+        </div>
+
+        <div class="note">Tracking details sent to you via email/SMS as they are shipped. Please allow 10 working days for domestic (India) & 21 days for delivery of international orders
+        </div>
+
+
+        <div class="col-xs-12  nopadding" ng-if="!isAndroid">
+            <a class="shpng-contn" href="http://www.craftsvilla.com/">CONTINUE SHOPPING</a>
+        </div>
+        <div class="col-xs-12  nopadding" ng-if="isAndroid">
+            <a class="shpng-contn" ng-click="showHomeScreen()">CONTINUE SHOPPING</a>
+        </div>
+
+            <div class="overlay-out-stock" ng-show="waitingOrderDatails">
+                        <img src="images/loader.gif" class="loader-cartitem">
+                    </div>
+    </div>
+</div>
+<script type="text/javascript">
+    if(typeof _satellite != "undefined") {
+        _satellite.track("order-page-load");
+    }
+</script>

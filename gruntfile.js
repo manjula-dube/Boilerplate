@@ -1,136 +1,154 @@
-/*global module:false*/
-
-/**
- * Javascript Project Boilerplate
- * Version 0.1.0
- */
 module.exports = function(grunt) {
-    "use strict";
-    var pkg, config;
 
-    pkg = grunt.file.readJSON('package.json');
-
-    config = {
-        banner : [
-            '/**\n',
-            ' * <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n',
-            ' * <%= pkg.description %>\n',
-            ' *\n',
-            ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n',
-            ' * Licensed <%= pkg.license %>\n',
-            ' */\n'
-        ].join(''),
-
-        sources : [
-            'src/intro.js',
-
-            // add'l packages
-
-            'src/export.js',
-            'src/outro.js'
-        ],
-        pkg : pkg,
-        uglifyFiles : {}
-    };
-
-    // setup dynamic filenames
-    config.versioned = [config.pkg.name, config.pkg.version].join('-');
-    config.dist = ['dist/', '.js'].join(config.versioned);
-    config.uglifyFiles[['dist/', '.min.js'].join(config.versioned)] = config.dist;
-
-    // Project configuration.
+    // Project configuration
     grunt.initConfig({
-        pkg : config.pkg,
-        lint : {
-            files : ['gruntfile.js', 'test/*.js', 'src/*']
-        },
-        clean : {
-            dist : ['dist/']
-        },
-        concat : {
-            options : {
-                stripBanners : true,
-                banner : config.banner
+        pkg: grunt.file.readJSON('package.json'),
+        watch: {
+            // templates: {
+            //     files: ['./app/partials/**/*.html', './app/templates/**/*.html'],
+            //     tasks: ['clean:html', 'ngtemplates', 'requirejs', 'uglify', 'clean:jsconcat']
+            // },
+            scripts: {
+                files: ['./app/js/**/*.js', '!./app/js/main.min.js'],
+                tasks: ['clean:js', 'requirejs', 'uglify', 'clean:jsconcat']
             },
-            dist : {
-                src : config.sources,
-                dest : config.dist
+            styles: {
+                files: ['./app/css/style.css'],
+                tasks: ['clean:css', 'cssmin']
             }
         },
-        uglify : {
-            options : { mangle : true },
-            dist : {
-                files : config.uglifyFiles
-            }
-        },
-        jasmine : {
-            tests : {
-                src : ['dist/', '.min.js'].join(config.versioned),
-                options : {
-                    specs : 'test/spec/*.spec.js',
-                    template : 'test/grunt.tmpl'
+        ngtemplates: {
+            app: {
+                cwd: './app',
+                src: ['partials/**/*.html', 'templates/**/*.html'],
+                dest: './app/js/templates.js',
+                options: {
+                    bootstrap:  function(module, script) {
+                        return 'define([\'angular\', \'app\'], function(angular, app) { app.run([\'$templateCache\', function($templateCache) {' + script + '}]); });';
+                    }
+                },
+                htmlmin: {
+                    collapseBooleanAttributes:      true,
+                    collapseWhitespace:             true,
+                    removeAttributeQuotes:          true,
+                    removeComments:                 true,
+                    removeEmptyAttributes:          true,
+                    removeRedundantAttributes:      true,
+                    removeScriptTypeAttributes:     true,
+                    removeStyleLinkTypeAttributes:  true
                 }
             }
         },
-        jshint : {
-            options : {
-                jshintrc : 'jshint.json'
+        requirejs: {
+            compile: {
+                options: {
+                    mainConfigFile: "./app/js/main.js",
+                    name: "main",
+                    out: "./app/js/main.concat.js",
+                    preserveLicenseComments: false
+                }
+            }
+        },
+        sass: {
+            options: {
+                style: 'compressed'
             },
-            source : config.dist
+            prod: {
+                src: './app/css/style.scss',
+                dest: './app/css/style.min.css'
+            }
+        },
+        imagemin: {
+            prod: {
+                options: {
+                    optimizationLevel: 7,
+                    cache: false
+                },
+                files: [{
+                    expand: true,
+                    src: ['./app/img/**/*.{png,jpg,gif}'],
+                    dest: '.'
+                }]
+            }
+        },
+        clean: {
+            js: ['app/js/main.min.js'],
+            html: ['app/js/templates.js'],
+            css: ['app/css/main.min.css'],
+            jsconcat: ['app/js/main.concat.js']
+        },
+        cssmin: {
+          options: {
+            shorthandCompacting: false,
+            roundingPrecision: -1
+          },
+          target: {
+            files: {
+              'app/css/main.min.css': ['app/bower_components/bootstrap/dist/css/bootstrap.min.css','app/css/font.css','app/css/custom.css', 'app/bower_components/components-font-awesome/css/font-awesome.min.css', 'app/css/style.css']
+            }
+          }
+      },
+      copy: {
+        font_awesome: {
+          files: [
+            // includes files within path and its sub-directories
+            {expand: true, src: ['app/bower_components/components-font-awesome/fonts/*.*'], dest: 'app/fonts/', flatten: true},
+          ],
+        },
+      },
+      //purifycss: {
+      //  options : {
+      //    timeout: 2000
+      //  },
+      //  target: {
+      //    src: ['app/partials/*.html'], // Observe all html files
+      //    css: ['app/bower_components/bootstrap/dist/css/bootstrap.min.css','app/css/custom.css','app/css/style.css'], // Take all css files into consideration
+      //    dest: 'app/css/tmp.css' // Write to this path
+      //  }
+      //},
+      //cssmin: {
+      //  options: {
+      //    shorthandCompacting: false,
+      //    roundingPrecision: -1
+      //  },
+      //  target: {
+      //    files: {
+      //      'app/css/main.min.css': ['app/css/font.css','app/css/tmp.css']
+      //    }
+      //  }
+      //},
+
+      uglify: {
+        options: {
+          mangle: false,
+          compress: {
+            drop_console: true
+          }
+        },
+        main: {
+          files: {
+            "./app/js/main.min.js": ["./app/js/main.concat.js"]
+          }
         }
+      }
+
     });
 
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-jasmine');
+    // Load plugins
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
 
-    // Default task.
-    grunt.registerTask('default', ['boilerplate-check', 'clean', 'concat', 'jshint', 'uglify', 'jasmine']);
+    // Production mode tasks
+    // grunt.registerTask('prod', ['sass', 'ngtemplates', 'requirejs', 'imagemin']);
 
-    grunt.registerTask('boilerplate-check', 'Ensures defaults have been updated.', function() {
-        var configured, log;
+    // Dev mode tasks
+    grunt.registerTask('default', ['clean', 'cssmin', 'copy:font_awesome', 'requirejs', 'uglify', 'clean:jsconcat', 'watch']);
 
-        configured = true;
-        log = grunt.log;
-        if (pkg.name === 'project-name') {
-            log.writeln('project.json.name has not been configured.');
-            configured = false;
-        }
-        if (pkg.version === '0.0.0') {
-            log.writeln('project.json.version has not been configured. Consider 0.0.1');
-            configured = false;
-        }
-        if (pkg.author === 'Your Name <your.name@domain.com>') {
-            log.writeln('project.json.author has not been configured.');
-            configured = false;
-        }
-        if (pkg.description === '') {
-            log.writeln('project.json.description has not been configured.');
-            configured = false;
-        }
-        if (pkg.contributors[0].name === 'Your Name') {
-            log.writeln('project.json.contributors name has not been configured.');
-            configured = false;
-        }
-        if (pkg.contributors[0].email === 'your.name@domain.com') {
-            log.writeln('project.json.contributors email has not been configured.');
-            configured = false;
-        }
-        if (pkg.main === null) {
-            log.writeln('project.json.main is null. Use grunt --force and find the file in ./dist');
-            configured = false;
-        }
-        if (pkg.repository.url === 'https://github.com/...') {
-            log.writeln('project.json.repository.url has not been configured.');
-            configured = false;
-        }
-        if (!pkg.keywords.length) {
-            log.writeln('project.json.keywords have not been configured.');
-            configured = false;
-        }
-        return configured;
-    });
 };

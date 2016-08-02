@@ -1,0 +1,863 @@
+<div role-header class="container-fluid nopadding" ng-if="!isAndroid">
+	<div role-nav class="container">
+		<div class="col-xs-6 nopadding" role="logo">
+			<img role="back" src="images/Shape.png" alt="" title="" ng-click="goBack()">
+			<a href="http://www.craftsvilla.com/" title="" target="_self"><img class="logo" src="/images/cv_logo.svg" alt="" title=""></a>
+			<span class="hidden-xs">Call 022 61579090 for any assistance</span>
+		</div>
+		<div class="col-xs-6 nopadding buyerProtection">
+			<ul>
+				<li class="visible-xs">100% Buyer Protection<br>Secure Payments</li>
+				<li class="hidden-xs">100% BUYER<br>PROTECTION</li>
+				<li class="hidden-xs"><strong>SECURE</strong><br>PAYMENTS</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!--// Header -->
+
+<!--// Content -->
+<div class="container-fluid nopadding">
+	<div class="container">
+		<!--// login Flow Start -->
+		<div class="loginProcessContainer container-fluid">
+			<div role="loginFlow" class="col-xs-12 nopadding">
+				<div class="circleBox LoginIcon rougeBack">
+					<span><img src="images/check.png" data-complete alt="" title=""></span>
+					<span class="rougeColor">Login</span>
+				</div>
+				<div class="Progressliner Firstliner rougeBack"></div>
+				<div class="circleBox ShippingIcon rougeBack">
+					<span><img src="images/check.png" alt="" title=""></span>
+					<span class="rougeColor">Shipping</span>
+				</div>
+				<div class="Progressliner Secoundliner rougeBack"></div>
+				<div class="circleBox PaymentIcon rougeBack">
+					<span><img src="images/payment-icon.png" alt="" title=""></span>
+					<span class="rougeColor">Payment</span>
+				</div>
+			</div>
+		</div>
+		<!--// login Flow End -->
+	</div>
+</div>
+
+<div class="container-fluid nopadding">
+	<div class="container nopadding">
+		<!--// -->
+		<div class="row paymentContainer">
+			<div class="col-xs-12">
+				<div class="alert alert-danger payment-error-msg text-center" ng-bind="getPaymentError()" ng-if="paymentErrorCode && shippingAmountData"></div>
+			</div>
+			<div class="col-xs-12 hidden-xs">
+				<h4 role="headding">CHOOSE PAYMENT METHOD</h4>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 pull-right item-details m-padding">
+				<div class="row youpay visible-xs">
+					<div class="col-xs-12">
+						<div role="items" class="col-xs-12 padding-left-0 padding-right-0">
+							<div class="col-xs-8 nopadding">
+								<h5>
+									You Pay
+									<span ng-click="toggleDetails()" ng-if="!isAndroid">
+										<a ng-show="!showDetails">View Details</a>
+										<a ng-show="showDetails">Hide Details</a>
+									</span>
+								</h5>
+							</div>
+							<div class="col-xs-4 nopadding text-right">
+								<!-- <span class="total-amount" ng-show="!waitingCartDatails" >&#8377; test {{shippingAdressData.grand_total | number: 0}}</span> -->
+								<span class="total-amount" ng-show="!waitingCartDatails" >
+									<span class="" ng-bind-html="getCurrencySymbol(currencyCodePayment)"></span>
+                            		{{shippingAdressData.grand_total | number: 0}}
+                            		</span>
+                                <div ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 nopadding r-bg">
+					<div role="items" class="col-xs-12 hidden-xs">
+						<div class="col-xs-8 nopadding">
+							<h5>{{shippingAmountData.total_items}} ITEMS <span>
+                                <a href="javascript:void(0)" ng-click="showDetails = !showDetails" ng-show="!showDetails">View Details</a>
+                                <a href="javascript:void(0)" ng-click="showDetails = !showDetails" ng-show="showDetails">Hide Details</a>
+                            </span></h5>
+						</div>
+						<div class="col-xs-4 nopadding text-right">
+                            <div ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+                            	<span class="total-amount" ng-show="!waitingCartDatails">
+                            		<span class="" ng-bind-html="getCurrencySymbol(currencyCodePayment)"></span>
+                            		{{shippingAdressData.grand_total | number: 0}}
+                            		</span>
+                        	</div>
+					</div>
+					<!--// -->
+					<div class="col-xs-12 item-container" ng-show="showDetails">
+						<div class="col-xs-12 items-list" ng-repeat = "quotedata in finalQuoteData" ng-show="showDetails">
+							<div class="media">
+								<span role="close" ng-click="removeFromCart(quotedata.product_id, quotedata)"><a  ><img src="images/delete-icon.png" alt="" title=""></a></span>
+								<div class="media-left">
+									<a href="{{PRODUCTURL + quotedata.product_id}}" target="_self">
+										<img class="media-object" src=" {{imgHost + quotedata.product_image}}" alt=""  width="100px" height="100px" title="">
+									</a>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">{{quotedata.product_name}}</h4>
+									<div class="paddint-tp-btm-5">
+										<span class="meta-label">Qty</span>
+										<span class="meta-value"> {{quotedata.product_qty}}</span>
+										<span ng-if="quotedata.variant" class="pipe">|</span>
+										<span ng-if="quotedata.variant" ng-bind-html="getProductMetaData(quotedata.variant, { 'key': 'Size', 'name': 'Size'}, { 'key': 'Color', 'name': 'Color'} )"></span></div>
+
+									<!-- <h4 class="items-price">&#8377; {{quotedata.product_price | number: 0}}</h4> -->
+									<h4 class="items-price">
+										<span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCodePayment)"></span>
+										 {{quotedata.product_price | number: 0}}
+									</h4>
+								</div>
+								<div class="overlay-out-stock" ng-show="quotedata.waitingCartItem">
+									<img src="images/loader.gif" class="loader-cartitem">
+								</div>
+							</div>
+						</div>
+						<!--// Shipping Details -->
+						<div class="col-xs-12 items-list" ng-show="showDetails">
+							<div class="col-xs-12 nopadding shipping-details">
+								<h5>SHIPPING DETAILS</h5>
+								<p class="wrap">
+									<span>{{shippingAdressData.firstname + ' ' + shippingAdressData.lastname}}</span>
+									<span class="normal">{{shippingAdressData.street +','+shippingAdressData.city +','+ shippingAdressData.region +','+ shippingAdressData.postcode}}</span>
+									<span class="normal">{{shippingAdressData.telephone}}</span>
+									<p>{{shippingAdressData.country}}</p>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-12 order-summary nopadding">
+							<div class="col-xs-12 nopadding border-bottom">
+								<h5>ORDER SUMMARY</h5>
+							</div>
+							<div class="col-xs-12 nopadding border-bottom order-summary-details">
+								<div class="col-xs-12 nopadding">
+									<div class="col-xs-8 nopadding text-left">
+										<p>Sub Total</p>
+									</div>
+									<div class="col-xs-4 nopadding text-right">
+										<div class="ord-amt pull-right" ng-show="!waitingCartDatails">
+											<span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCodePayment)"></span>
+											<!-- svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+											  <path d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+											</svg -->
+											<div class="pull-right">{{ shippingAmountData.sub_total | number: 0 }}</div>
+										</div>
+										<div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+									</div>
+								</div>
+								<div class="col-xs-12 nopadding" ng-show="successCoupon && !waitingCartDatails">
+									<div class="col-xs-8 nopadding text-left">
+										<p ng-show="shippingAmountData.totol_discount > 0">Coupon Applied ({{ shippingAmountData.coupon_code }})</p>
+									</div>
+									<div class="col-xs-4 nopadding text-right">
+					                  <div class="ord-amt pull-right" ng-show="successCoupon && !waitingCartDatails">
+					                      <span class="pull-left"> &#45; </span>
+					                      <span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCodePayment)"></span>
+					                      <!-- svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 28" class="icon">
+					                          <path d="M14.031 7.344v1.594q0 0.219-0.141 0.359t-0.359 0.141h-2.625q-0.359 2.25-2.016 3.656t-4.312 1.719q2.609 2.781 7.172 8.375 0.219 0.25 0.063 0.531-0.125 0.281-0.453 0.281h-3.047q-0.25 0-0.391-0.187-4.781-5.734-7.781-8.922-0.141-0.141-0.141-0.344v-1.984q0-0.203 0.148-0.352t0.352-0.148h1.75q2.063 0 3.32-0.672t1.602-1.953h-6.672q-0.219 0-0.359-0.141t-0.141-0.359v-1.594q0-0.219 0.141-0.359t0.359-0.141h6.453q-0.891-1.766-4.188-1.766h-2.266q-0.203 0-0.352-0.148t-0.148-0.352v-2.078q0-0.219 0.141-0.359t0.359-0.141h13q0.219 0 0.359 0.141t0.141 0.359v1.594q0 0.219-0.141 0.359t-0.359 0.141h-3.641q0.734 0.953 1 2.25h2.672q0.219 0 0.359 0.141t0.141 0.359z"></path>
+					                      </svg -->
+					                      {{ shippingAmountData.totol_discount | number: 0 }}
+					                  </div>
+					                  <div class="ord-amt" ng-show="waitingCartDatails && successCoupon"><img src="images/textloading.gif" class="textloading"></div>
+									</div>
+								</div>
+								<div class="col-xs-12 nopadding" ng-show="successCoupon && !waitingCartDatails">
+									<p class="green" ng-show="shippingAmountData.totol_discount > 0">You saved {{ discountPecent | number: 0}}%</p>
+								</div>
+								<div class="col-xs-12 nopadding">
+									<div class="col-xs-8 nopadding text-left">
+										<p>Shipping</p>
+									</div>
+									<div class="col-xs-4 nopadding text-right">
+					                  <div class="ord-amt pull-right" ng-show="!waitingCartDatails">
+					                  	<span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCodePayment)"></span>
+					                        {{ shippingAdressData.shipping_amount | number: 0 }}
+					                  </div>
+					                  <div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 nopadding">
+								<div class="col-xs-8 nopadding text-left">
+									<h5>Total Payable</h5>
+								</div>
+								<div class="col-xs-4 nopadding text-right">
+				                  <div class="ord-amt total pull-right" ng-show="!waitingCartDatails">
+				                  	<span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCodePayment)"></span>
+				                     {{ shippingAdressData.grand_total | number: 0 }}
+				                  </div>
+				                  <div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+								</div>
+							</div>
+						</div>
+						<!--// Shipping End -->
+					</div>
+						<!--// Order Summary -->
+						<div class="col-xs-12 order-summary nopadding hidden-xs" ng-hide="showDetails">
+							<div class="col-xs-12 nopadding border-bottom">
+								<h5>ORDER SUMMARY</h5>
+							</div>
+							<div class="col-xs-12 nopadding border-bottom order-summary-details">
+								<div class="col-xs-12 nopadding">
+									<div class="col-xs-8 nopadding text-left">
+										<p>Sub Total</p>
+									</div>
+									<div class="col-xs-4 nopadding text-right">
+										<div class="ord-amt pull-right" ng-show="!waitingCartDatails">
+											<span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCodePayment)"></span>
+											<div class="pull-right">{{ shippingAmountData.sub_total | number: 0 }}</div>
+										</div>
+										<div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+									</div>
+								</div>
+								<div class="col-xs-12 nopadding">
+									<div class="col-xs-8 nopadding text-left">
+										<p ng-show="shippingAmountData.totol_discount > 0">Coupon Applied ({{ shippingAmountData.coupon_code }})</p>
+									</div>
+									<div class="col-xs-4 nopadding text-right">
+					                  <div class="ord-amt pull-right" ng-show="successCoupon && !waitingCartDatails">
+					                      <span class="pull-left"> &#45; </span>
+					                      <span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCodePayment)"></span>
+					                      {{ shippingAmountData.totol_discount | number: 0 }}
+					                  </div>
+					                  <div class="ord-amt" ng-show="waitingCartDatails && successCoupon"><img src="images/textloading.gif" class="textloading"></div>
+									</div>
+								</div>
+								<div class="col-xs-12 nopadding">
+									<p class="green" ng-show="shippingAmountData.totol_discount > 0">You saved {{ discountPecent | number: 0}}%</p>
+								</div>
+								<div class="col-xs-12 nopadding">
+									<div class="col-xs-8 nopadding text-left">
+										<p>Shipping</p>
+									</div>
+									<div class="col-xs-4 nopadding text-right">
+					                  <div class="ord-amt pull-right" ng-show="!waitingCartDatails">
+					                  	<span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCodePayment)"></span>
+					                       {{ shippingAdressData.shipping_amount | number: 0 }}
+					                  </div>
+					                  <div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 nopadding">
+								<div class="col-xs-8 nopadding text-left">
+									<h5>Total Payable</h5>
+								</div>
+								<div class="col-xs-4 nopadding text-right">
+				                  <div class="ord-amt total pull-right" ng-show="!waitingCartDatails">
+				                  	<span class="currency-code-summary" ng-bind-html="getCurrencySymbol(currencyCodePayment)"></span>
+				                      {{ shippingAdressData.grand_total | number: 0 }}
+				                  </div>
+				                  <div class="ord-amt" ng-show="waitingCartDatails"><img src="images/textloading.gif" class="textloading"></div>
+								</div>
+							</div>
+						</div>
+					<!--// -->
+
+				</div>
+			</div>
+
+			<!--// Desktop -->
+
+			<div class="col-xs-12 col-sm-6 col-md-8 new-payment-method hidden-xs">
+				<div class="col-xs-12 nopadding box-border">
+					<div class="col-xs-12 col-sm-3 nopadding payment-list"> <!-- required for floating -->
+					    <!-- Nav tabs -->
+						<ul class="nav nav-tabs tabs-left">
+							<li ng-repeat="item in paymentMethods" ng-class="{ active: changeName == '{{item.method}}', grey: (changeName == 'Cash On Delivery' && shippingAmountData.showCod == 0) }">
+								<a href="javascript:void(0)" data-toggle="tab" ng-click="changeSlide(item)">{{ item.method }}</a>
+							</li>
+						</ul>
+					</div>
+					<!-- Tab panes -->
+					<div class="tab-content col-xs-9 col-sm-9">
+						<div class="tab-pane" id="cashondelivery" ng-class="{ active: changeName == '{{item.method}}' }" ng-repeat="item in paymentMethods">
+							<!-- show on cod -->
+							<div class="col-xs-12 cashondelivery" ng-if = "item.method == 'Cash On Delivery' && shippingAmountData.showCod == 1">
+								<h3>Pay Using Cash on Delivery</h3>
+								<p>Please keep a total of Rs {{shippingAmountData.grand_total | number: 0}} to pay on delivery </p>
+								<div class="col-xs-12 col-sm-7 nopadding">
+									<button  class="btn btn-newStyle bg-green" ng-click="placeOrder()" ng-class="{'no-events': placeOrderLoader}" id="placeOrderCODDesktopBtn">
+										<span ng-show="!placeOrderLoader">PLACE ORDER</span>
+										<img ng-show="placeOrderLoader"  src="images/loader.gif" class="small-loader"/>
+									</button>
+								</div>
+							</div>
+							<div class="col-xs-12 cashondelivery" ng-if = "item.method == 'Cash On Delivery' && shippingAmountData.showCod == 0">
+								<p>Your order is not eligible for Cash On Delivery. Please pay Online.</p>
+							</div>
+							<!-- show on payu -->
+							<div class="col-xs-12 payuform" ng-if = "item.method == 'PayU Money'">
+								<p>You will be redirected to PayU to complete the order</p>
+								<div class="col-xs-12 col-sm-7 nopadding">
+									<button  class="btn btn-newStyle bg-green"  ng-click="placeOrder()" ng-class="{'no-events': placeOrderLoader}" id="placeOrderPayUDesktopBtn">
+										<span ng-show="!placeOrderLoader">PAY <span><span ng-bind-html="getCurrencySymbol(currencyCodePayment)"> </span> {{shippingAmountData.grand_total | number: 0}}</span> SECURELY</span>
+										<img ng-show="placeOrderLoader"  src="images/loader.gif" class="small-loader"/>
+									</button>
+								</div>
+							</div>
+							<!-- show on paypal -->
+							<div class="col-xs-12 payuform" ng-if = "item.method == 'PayPal'">
+								<p>You will be redirected to PayPal to complete the order</p>
+								<div class="col-xs-12 col-sm-7 nopadding">
+									<button  class="btn btn-newStyle bg-green"  ng-click="placeOrder()" ng-class="{'no-events': placeOrderLoader}">
+										<span ng-show="!placeOrderLoader">PAY <span><span ng-bind-html="getCurrencySymbol(currencyCodePayment)"> </span> {{shippingAmountData.grand_total | number: 0}}</span> SECURELY</span>
+										<img ng-show="placeOrderLoader"  src="images/loader.gif" class="small-loader"/>
+									</button>
+								</div>
+							</div>
+							<!-- show on creditcard -->
+							<div class="col-xs-12 col-sm-8 creditcard" ng-if = "item.method == 'Credit card'">
+								<form name="forms.creditForm" ng-submit="placeOrder()" novalidate>
+									<div class="col-xs-12 nopadding">
+										<fieldset class="form-group" ng-class="{ 'error' : validate('cardNumber', forms.creditForm)}">
+											<label>Credit Card Number</label>
+											<input
+												class="form-control"
+									      type="text"
+									      name="cardNumber"
+												ng-change="validateMaestro()"
+									      ng-model="credit.cardNumber"
+									      required
+									      cc-number
+												cc-format
+												cc-type="cardType"
+												cc-eager-type
+									      placeholder="Card Number"
+												autocomplete="off"
+												ng-blur="forms.creditForm.cardNumber.$xblur=true"
+												ng-focus="forms.creditForm.cardNumber.$xblur=false">
+											<p ng-show="validate('cardNumber', forms.creditForm)">Invalid Credit Card</p>
+											<span class="card-type" ng-if="forms.creditForm.cardNumber.$viewValue.length > 0"><img ng-src="{{getCCTypeImage(forms.creditForm.cardNumber.$ccEagerType)}}" /></span>
+										</fieldset>
+									</div>
+									<div class="col-xs-12 nopadding">
+										<fieldset class="form-group" ng-class="{ 'error' : validate('cardName', forms.creditForm) }">
+											<label>Name on Card</label>
+											<input
+											type="text"
+											placeholder="Name on Card"
+											class="form-control"
+											ng-model="credit.cardName"
+											required
+											name="cardName"
+											autocomplete="off"
+											ng-blur="forms.creditForm.cardName.$xblur=true"
+											ng-focus="forms.creditForm.cardName.$xblur=false">
+											<p ng-show="validate('cardName', forms.creditForm)">Please enter name</p>
+										</fieldset>
+									</div>
+									<div class="col-xs-12 nopadding">
+										<div class="col-xs-7 valid-upto">
+											<fieldset class="form-group" ng-class="{ 'error' : validate('cardExp', forms.creditForm) }">
+												<label>Valid Upto<x ng-if="oldCreditMaestroDetected"> (Optional)</x></label>
+												<input
+												ng-model="credit.cardMonth"
+												cc-exp-month
+												class="form-control pull-left"
+												placeholder="MM"
+												name="cardM"
+												autocomplete="off"
+												ng-blur="forms.creditForm.cardM.$xblur=true"
+												ng-focus="forms.creditForm.cardM.$xblur=false"
+												required/>
+
+												<span role="division">/</span>
+
+  											<input
+												ng-model="credit.cardYear"
+												cc-exp-year
+												class="form-control pull-right"
+												placeholder="YY"
+												name="cardY"
+												ng-blur="forms.creditForm.cardY.$xblur=true"
+												ng-focus="forms.creditForm.cardY.$xblur=false"
+												autocomplete="off"
+												required/>
+												<p ng-show="validate('cardExp', forms.creditForm)">Invalid date</p>
+											</fieldset>
+										</div>
+										<div class="col-xs-5 cvv-code">
+											<fieldset class="form-group" ng-class="{'error' : validate('cardCVC', forms.creditForm)}">
+												<label>CVV<x ng-if="oldCreditMaestroDetected"> (Optional)</x></label>
+												<input
+												type="password"
+												class="form-control"
+												id="cc_cvc"
+												cc-cvc
+												cc-type="forms.creditForm.cardNumber.$ccType"
+												name="cardCVC"
+												ng-model="credit.cardCvv"
+												ng-blur="forms.creditForm.cardCVC.$xblur=true"
+												ng-focus="forms.creditForm.cardCVC.$xblur=false"
+												required
+												autocomplete="off"
+												placeholder="CVV"/>
+											</fieldset>
+										</div>
+										<div ng-show="forms.creditForm.$submitted && forms.creditForm.$invalid && !oldCreditMaestroDetected">
+											<span class="error">Please provide correct payment information</span>
+										</div>
+									</div>
+									<div class="col-xs-12 nopadding">
+										<button  class="btn btn-newStyle bg-green" type="submit" ng-class="{'no-events': placeOrderLoader}" id="placeOrderCCDesktopBtn">
+											<span ng-show="!placeOrderLoader" ng-bind-html="getPlaceOrderText()"></span>
+											<img ng-show="placeOrderLoader"  src="images/loader.gif" class="small-loader"/>
+										</button>
+									</div>
+								</form>
+							</div>
+							<!-- show on Debit card -->
+							<div class="col-xs-12 col-sm-8 creditcard" ng-if = "item.method == 'Debit Card'">
+								<form name="forms.debitForm" ng-submit="placeOrder()" novalidate>
+									<div class="col-xs-12 nopadding">
+										<fieldset class="form-group" ng-class="{ 'error' : validate('cardNumber', forms.debitForm)}">
+											<label>Debit Card Number</label>
+											<input
+												class="form-control"
+									      type="text"
+									      name="cardNumber"
+												ng-change="validateMaestro()"
+									      ng-model="debit.cardNumber"
+									      required
+									      cc-number
+												cc-format
+												cc-type="cardType"
+												cc-eager-type
+									      placeholder="Card Number"
+												autocomplete="off"
+												ng-blur="forms.debitForm.cardNumber.$xblur=true"
+												ng-focus="forms.debitForm.cardNumber.$xblur=false">
+											<p ng-show="validate('cardNumber', forms.debitForm)">Invalid Debit Card</p>
+											<span class="card-type" ng-if="forms.debitForm.cardNumber.$viewValue.length > 0"><img ng-src="{{getCCTypeImage(forms.debitForm.cardNumber.$ccEagerType)}}" /></span>
+										</fieldset>
+									</div>
+									<div class="col-xs-12 nopadding">
+										<fieldset class="form-group" ng-class="{ 'error' : validate('cardName', forms.debitForm) }">
+											<label>Name on Card</label>
+											<input
+											type="text"
+											placeholder="Name on Card"
+											class="form-control"
+											ng-model="debit.cardName"
+											required
+											name="cardName"
+											autocomplete="off"
+											ng-blur="forms.debitForm.cardName.$xblur=true"
+											ng-focus="forms.debitForm.cardName.$xblur=false">
+											<p ng-show="validate('cardName', forms.debitForm)">Please enter name</p>
+										</fieldset>
+									</div>
+									<div class="col-xs-12 nopadding">
+										<div class="col-xs-7 valid-upto">
+											<fieldset class="form-group" ng-class="{ 'error' : validate('cardExp', forms.debitForm) }">
+												<label>Valid Upto<x ng-if="oldDebitMaestroDetected"> (Optional)</x></label>
+												<input
+												ng-model="debit.cardMonth"
+												cc-exp-month
+												class="form-control pull-left"
+												placeholder="MM"
+												name="cardM"
+												ng-blur="forms.debitForm.cardM.$xblur=true"
+												ng-focus="forms.debitForm.cardM.$xblur=false"
+												autocomplete="off"
+												required/>
+
+												<span role="division">/</span>
+
+  											<input
+												ng-model="debit.cardYear"
+												cc-exp-year
+												class="form-control pull-right"
+												placeholder="YY"
+												name="cardY"
+												ng-blur="forms.debitForm.cardY.$xblur=true"
+												ng-focus="forms.debitForm.cardY.$xblur=false"
+												autocomplete="off"
+												required/>
+												<p ng-show="validate('cardExp', forms.debitForm)">Invalid date</p>
+											</fieldset>
+										</div>
+										<div class="col-xs-5 cvv-code">
+											<fieldset class="form-group" ng-class="{'error' : validate('cardCVC', forms.debitForm)}">
+												<label>CVV<x ng-if="oldDebitMaestroDetected"> (Optional)</x></label>
+												<input
+												type="password"
+												class="form-control"
+												id="cc_cvc"
+												cc-cvc
+												cc-type="forms.debitForm.cardNumber.$ccType"
+												name="cardCVC"
+												ng-model="debit.cardCvv"
+												ng-blur="forms.debitForm.cardCVC.$xblur=true"
+												ng-focus="forms.debitForm.cardCVC.$xblur=false"
+												autocomplete="off"
+												required
+												placeholder="CVV"/>
+											</fieldset>
+										</div>
+										<div ng-show="forms.debitForm.$submitted && forms.debitForm.$invalid && !oldDebitMaestroDetected">
+											<span class="error">Please provide correct payment information</span>
+										</div>
+									</div>
+									<div class="col-xs-12 nopadding">
+										<button  class="btn btn-newStyle bg-green" type="submit" ng-class="{'no-events': placeOrderLoader}" id="placeOrderDCDesktopBtn">
+											<span ng-show="!placeOrderLoader">PAY
+												<!-- <span><i>&#x20B9;</i>{{shippingAmountData.grand_total | number: 0}}</span> SECURELY</span>-->
+												<span>
+													<span ng-bind-html="getCurrencySymbol(currencyCodePayment)"> </span>
+													{{shippingAmountData.grand_total | number: 0}}
+												</span> SECURELY</span>
+
+											<img ng-show="placeOrderLoader"  src="images/loader.gif" class="small-loader"/>
+										</button>
+									</div>
+								</form>
+							</div>
+							<!-- show on Net Banking -->
+							<form class="col-xs-12 NetBanking" name="forms.NBForm" novalidate ng-if = "item.method == 'Net Banking'">
+								<ul role="nasted-list">
+									<li ng-repeat = "bank in item.content.priority">
+										<input id="{{bank.bank_code}}" type="radio" name="bank" value="{{bank.bank_code}}" ng-model="nb.netbanking" required>
+										<label for="{{bank.bank_code}}"><span></span><img ng-src="/images/{{bank.logo_url}}" alt="{{bank.bank_name}}"/></label>
+									</li>
+
+								</ul>
+								<div class="col-xs-12 nopadding">
+									<span class="pull-left or">OR</span>
+									<div class="select-style">
+										<select ng-model="nb.netbanking" name="bank" ng-options="item.bank_code as item.bank_name for item in item.content.others" required></select>
+									</div>
+									<div ng-show="forms.NBForm.$submitted && forms.NBForm.$invalid">
+										<span class="error">Please provide correct payment information</span>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-8 nopadding">
+									<button  class="btn btn-newStyle bg-green" type="submit" ng-class="{'no-events': placeOrderLoader}" ng-click="placeOrder()" id="placeOrderNBDesktopBtn">
+										<!-- <span ng-show="!placeOrderLoader">PAY <span><i>&#x20B9;</i>{{shippingAmountData.grand_total | number: 0}}</span> SECURELY</span>-->
+										<span ng-show="!placeOrderLoader">PAY
+											<span ng-bind-html="getCurrencySymbol(currencyCodePayment)"> </span>
+											{{shippingAmountData.grand_total | number: 0}}
+											SECURELY
+											</span>
+										</span>
+
+										<img ng-show="placeOrderLoader"  src="images/loader.gif" class="small-loader"/>
+									</button>
+								</div>
+							</div>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--// Mobile -->
+			<div class="container-fluid nopadding visible-xs">
+				<div class="col-xs-12 col-sm-6 new-payment-method m-padding">
+					<div class="col-xs-12">
+						<h4 role="headding">CHOOSE PAYMENT METHOD</h4>
+					</div>
+					<div class="col-xs-12">
+						<div class="col-xs-12 nopadding payment-list"> <!-- required for floating -->
+						    <!-- Nav tabs -->
+							<ul data-payment-mobile class="nav nav-tabs tabs-left">
+								<li ng-repeat="item in paymentMethods" ng-class="{ active: changeName == '{{item.method}}', grey: (changeName == 'Cash On Delivery' && shippingAmountData.showCod == 0)}">
+									<a href="javascript:void(0)" data-toggle="tab" ng-click="changeSlide(item)">{{ item.method }}</a>
+										<!-- show on cod -->
+										<div class="col-xs-12 cashondelivery" ng-if = "item.method == 'Cash On Delivery' && shippingAmountData.showCod == 1">
+											<p>Please keep a total of Rs {{shippingAmountData.grand_total | number: 0}} to pay on delivery </p>
+											<div class="col-xs-12 col-sm-7 nopadding hidden-xs">
+												<input type="button" value="PLACE ORDER" class="btn btn-newStyle bg-green" ng-click="cashOn()">
+											</div>
+										</div>
+										<div class="col-xs-12 cashondelivery" ng-if = "item.method == 'Cash On Delivery' && shippingAmountData.showCod == 0">
+											<p>Your order is not eligible for Cash On Delivery. Please pay Online.</p>
+										</div>
+										<!-- show on payu -->
+										<div class="col-xs-12 payuform" ng-if = "item.method == 'PayU Money'">
+											<p>You will be redirected to PayU to complete the order</p>
+											<div class="col-xs-12 col-sm-7 nopadding hidden-xs">
+												<button ng-click="submitPayUForm()" class="btn btn-newStyle bg-green">PAY <span><i>&#x20B9;</i>{{shippingAmountData.grand_total | number: 0}}</span> SECURELY</button>
+											</div>
+										</div>
+										<!-- show on paypal -->
+										<div class="col-xs-12 payuform" ng-if = "item.method == 'PayPal'">
+											<p>You will be redirected to PayPal to complete the order</p>
+											<div class="col-xs-12 col-sm-7 nopadding hidden-xs">
+												<button ng-click="submitPaypalForm()" class="btn btn-newStyle bg-green">PAY <span><i>&#x20B9;</i>{{shippingAmountData.grand_total | number: 0}}</span> SECURELY</button>
+											</div>
+										</div>
+										<!-- show on creditcard -->
+										<div class="col-xs-12 col-sm-8 creditcard" ng-if = "item.method == 'Credit card'">
+											<form name="forms.creditForm_mobile" ng-submit="submitCreditForm()" novalidate>
+												<div class="col-xs-12 nopadding">
+													<fieldset class="form-group" ng-class="{ 'error' : validate('cardNumber', forms.creditForm_mobile)}">
+														<label>Credit Card Number</label>
+														<input
+															class="form-control"
+												      type="text"
+												      name="cardNumber"
+															ng-change="validateMaestro()"
+												      ng-model="credit.cardNumber"
+												      required
+												      cc-number
+															cc-format
+															cc-type="cardType"
+															cc-eager-type
+												      placeholder="Card Number"
+															autocomplete="off"
+															ng-blur="forms.creditForm_mobile.cardNumber.$xblur=true"
+															ng-focus="forms.creditForm_mobile.cardNumber.$xblur=false">
+														<p ng-show="validate('cardNumber', forms.creditForm_mobile)">Invalid Credit Card</p>
+														<span class="card-type" ng-if="forms.creditForm_mobile.cardNumber.$viewValue.length > 0"><img ng-src="{{getCCTypeImage(forms.creditForm_mobile.cardNumber.$ccEagerType)}}" /></span>
+													</fieldset>
+												</div>
+												<div class="col-xs-12 nopadding">
+													<fieldset class="form-group" ng-class="{ 'error' : validate('cardName', forms.creditForm_mobile) }">
+														<label>Name on Card</label>
+														<input
+														type="text"
+														placeholder="Name on Card"
+														class="form-control"
+														ng-model="credit.cardName"
+														required
+														name="cardName"
+														autocomplete="off"
+														ng-blur="forms.creditForm_mobile.cardName.$xblur=true"
+														ng-focus="forms.creditForm_mobile.cardName.$xblur=false">
+														<p ng-show="validate('cardName', forms.creditForm_mobile)">Please enter name</p>
+													</fieldset>
+												</div>
+												<div class="col-xs-12 nopadding">
+													<div class="col-xs-12 valid-upto">
+														<fieldset class="form-group" ng-class="{ 'error' : validate('cardExp', forms.creditForm_mobile) }">
+															<label>Valid Upto<x ng-if="oldCreditMaestroDetected"> (Optional)</x></label>
+															<input
+															ng-model="credit.cardMonth"
+															cc-exp-month
+															class="form-control pull-left"
+															placeholder="MM"
+															name="cardM"
+															ng-blur="forms.creditForm_mobile.cardM.$xblur=true"
+															ng-focus="forms.creditForm_mobile.cardM.$xblur=false"
+															autocomplete="off"
+															required/>
+
+															<span role="division">/</span>
+
+			  											<input
+															ng-model="credit.cardYear"
+															cc-exp-year
+															class="form-control pull-right"
+															placeholder="YY"
+															name="cardY"
+															ng-blur="forms.creditForm_mobile.cardY.$xblur=true"
+															ng-focus="forms.creditForm_mobile.cardY.$xblur=false"
+															autocomplete="off"
+															required/>
+															<p ng-show="validate('cardExp', forms.creditForm_mobile)">Invalid date</p>
+														</fieldset>
+													</div>
+													<div class="col-xs-5 cvv-code">
+														<fieldset class="form-group" ng-class="{'error' : validate('cardCVC', forms.creditForm_mobile)}">
+															<label>CVV<x ng-if="oldCreditMaestroDetected"> (Optional)</x></label>
+															<input
+															type="password"
+															class="form-control"
+															id="cc_cvc"
+															cc-cvc
+															cc-type="forms.creditForm_mobile.cardNumber.$ccType"
+															name="cardCVC"
+															ng-model="credit.cardCvv"
+															ng-blur="forms.creditForm_mobile.cardCVC.$xblur=true"
+															ng-focus="forms.creditForm_mobile.cardCVC.$xblur=false"
+															autocomplete="off"
+															required
+															placeholder="CVV"/>
+														</fieldset>
+													</div>
+												</div>
+												<div ng-show="forms.creditForm_mobile.$submitted && forms.creditForm_mobile.$invalid && !oldCreditMaestroDetected">
+				                	<span class="error">Please provide correct payment information</span>
+				                </div>
+												<div class="col-xs-12 nopadding hidden-xs">
+													<button type="submit" class="btn btn-newStyle bg-green" ng-disabled="validate('payment', forms.creditForm_mobile)">
+														PAY
+														<!-- <span><i>&#x20B9;</i>{{shippingAmountData.grand_total | number: 0}}</span> SECURELY</button>-->
+														<span ng-bind-html="getCurrencySymbol(currencyCodePayment)"> </span>
+															{{shippingAmountData.grand_total | number: 0}}
+														</span>
+														SECURELY
+													</button>
+												</div>
+											</form>
+										</div>
+										<!-- show on Debit card -->
+										<div class="col-xs-12 col-sm-8 creditcard" ng-if = "item.method == 'Debit Card'">
+											<form name="forms.debitForm_mobile" ng-submit="submitDebitForm()" novalidate>
+												<div class="col-xs-12 nopadding">
+													<fieldset class="form-group" ng-class="{ 'error' : validate('cardNumber', forms.debitForm_mobile)}">
+														<label>Debit Card Number</label>
+														<input
+															class="form-control"
+												      type="text"
+												      name="cardNumber"
+															ng-change="validateMaestro()"
+												      ng-model="debit.cardNumber"
+												      required
+												      cc-number
+															cc-format
+															cc-type="cardType"
+															cc-eager-type
+												      placeholder="Card Number"
+															autocomplete="off"
+															ng-blur="forms.debitForm_mobile.cardNumber.$xblur=true"
+															ng-focus="forms.debitForm_mobile.cardNumber.$xblur=false">
+														<p ng-show="validate('cardNumber', forms.debitForm_mobile)">Invalid Debit Card</p>
+														<span class="card-type" ng-if="forms.debitForm_mobile.cardNumber.$viewValue.length > 0"><img ng-src="{{getCCTypeImage(forms.debitForm_mobile.cardNumber.$ccEagerType)}}" /></span>
+													</fieldset>
+												</div>
+												<div class="col-xs-12 nopadding">
+													<fieldset class="form-group" ng-class="{ 'error' : validate('cardName', forms.debitForm_mobile) }">
+														<label>Name on Card</label>
+														<input
+														type="text"
+														placeholder="Name on Card"
+														class="form-control"
+														ng-model="debit.cardName"
+														required
+														name="cardName"
+														autocomplete="off"
+														ng-blur="forms.debitForm_mobile.cardName.$xblur=true"
+														ng-focus="forms.debitForm_mobile.cardName.$xblur=false">
+														<p ng-show="validate('cardName', forms.debitForm_mobile)">Please enter name</p>
+													</fieldset>
+												</div>
+												<div class="col-xs-12 nopadding">
+													<div class="col-xs-12 valid-upto">
+														<fieldset class="form-group" ng-class="{ 'error' : validate('cardExp', forms.debitForm_mobile) }">
+															<label>Valid Upto<x ng-if="oldDebitMaestroDetected"> (Optional)</x></label>
+															<input
+															ng-model="debit.cardMonth"
+															cc-exp-month
+															class="form-control pull-left"
+															placeholder="MM"
+															name="cardM"
+															ng-blur="forms.debitForm_mobile.cardM.$xblur=true"
+															ng-focus="forms.debitForm_mobile.cardM.$xblur=false"
+															autocomplete="off"
+															required/>
+
+															<span role="division">/</span>
+
+			  											<input
+															ng-model="debit.cardYear"
+															cc-exp-year
+															class="form-control pull-right"
+															placeholder="YY"
+															name="cardY"
+															ng-blur="forms.debitForm_mobile.cardY.$xblur=true"
+															ng-focus="forms.debitForm_mobile.cardY.$xblur=false"
+															autocomplete="off"
+															required/>
+															<p ng-show="validate('cardExp', forms.debitForm_mobile)">Invalid date</p>
+														</fieldset>
+													</div>
+													<div class="col-xs-5 cvv-code">
+														<fieldset class="form-group" ng-class="{'error' : validate('cardCVC', forms.debitForm_mobile)}">
+															<label>CVV<x ng-if="oldDebitMaestroDetected"> (Optional)</x></label>
+															<input
+															type="password"
+															class="form-control"
+															id="cc_cvc"
+															cc-cvc
+															cc-type="forms.debitForm_mobile.cardNumber.$ccType"
+															name="cardCVC"
+															ng-model="debit.cardCvv"
+															ng-blur="forms.debitForm_mobile.cardCVC.$xblur=true"
+															ng-focus="forms.debitForm_mobile.cardCVC.$xblur=false"
+															autocomplete="off"
+															required
+															placeholder="CVV"/>
+														</fieldset>
+													</div>
+												</div>
+												<div ng-show="forms.debitForm_mobile.$submitted && forms.debitForm_mobile.$invalid && !oldDebitMaestroDetected">
+				                	<span class="error">Please provide correct payment information</span>
+				                </div>
+												<div class="col-xs-12 nopadding hidden-xs">
+													<button type="submit" class="btn btn-newStyle bg-green" ng-disabled="validate('payment', forms.debitForm_mobile)">PAY <span><i>&#x20B9;</i>{{shippingAmountData.grand_total | number: 0}}</span> SECURELY</button>
+												</div>
+											</form>
+										</div>
+										<!-- show on Net Banking -->
+										<div class="col-xs-12 creditcard" ng-if = "item.method == 'Net Banking'">
+											<form name="forms.NBForm_mobile" novalidate >
+												<ul role="nasted-list">
+													<li ng-repeat = "bank in item.content.priority">
+														<input id="{{bank.bank_code}}" type="radio" name="bank" value="{{bank.bank_code}}" ng-model="nb.netbanking" required>
+														<label for="{{bank.bank_code}}"><span></span><img ng-src="/images/{{bank.logo_url}}" alt="{{bank.bank_name}}" /></label>
+													</li>
+
+												</ul>
+												<div class="col-xs-12 nopadding">
+													<span class="pull-left or">OR</span>
+													<div class="select-style">
+														<select ng-model="nb.netbanking" name="bank" ng-options="item.bank_code as item.bank_name for item in item.content.others" required></select>
+													</div>
+												</div>
+												<div ng-show="forms.NBForm_mobile.$submitted && forms.NBForm_mobile.$invalid">
+				                	<span class="error">Please provide correct payment information</span>
+				                </div>
+												<div class="col-xs-12 col-sm-8 nopadding hidden-xs">
+													<a class="btn btn-newStyle bg-green" href="javascript:void(0)" ng-click="submitNBForm()">PAY <span><i>&#x20B9;</i>{{shippingAmountData.grand_total | number: 0}}</span> SECURELY</a>
+												</div>
+											</div>
+										</form>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 nopadding visible-xs fixed-button" ng-if="!(changeName == 'Cash On Delivery' && shippingAmountData.showCod == 0)">
+				<button  class="btn btn-newStyle bg-green"  ng-click="placeOrder()" ng-class="{'no-events': placeOrderLoader}" id="placeOrderAllMobileBtn">
+					<span ng-show="!placeOrderLoader" ng-bind-html="getPlaceOrderText()"></span>
+					<img ng-show="placeOrderLoader"  src="images/loader.gif" class="small-loader"/>
+				</button>
+			</div>
+			<!--// -->
+		</div>
+		<!--// -->
+		<div class="col-xs-12 nopadding spacer">&nbsp;</div>
+		<!--// -->
+		<div class="col-xs-12 nopadding payments-facilities text-center">
+			<div class="row visible-xs">
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 nopadding buyerProtection visible-xs">
+						<a href="#">
+							<span><img src="images/bitmap.png" alt="" title=""></span>
+							<strong>100%</strong> Buyer Protection
+						</a>
+					</div>
+				</div>
+			</div>
+			<ul>
+				<li><img src="images/verified-by-visa.png" alt="" title=""></li>
+				<li><img src="images/visa-mastercard.png" alt="" title=""></li>
+				<li><img src="images/footer.png" alt="" title=""></li>
+			</ul>
+		</div>
+		<!--// -->
+	</div>
+</div>
+<!--// Content -->
