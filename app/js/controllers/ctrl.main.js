@@ -36,6 +36,7 @@ define(['./index'], function (controllers) {
       $rootScope.scrollToTop = function () {
           document.body.scrollTop = document.documentElement.scrollTop = 0;
       }
+			
       $scope.getProductMetaData=function(){
       	var obj = arguments[0];
       	var returnArr = [];
@@ -45,8 +46,6 @@ define(['./index'], function (controllers) {
       	}
       	return $sce.trustAsHtml(returnArr.join('<span class="pipe">&nbsp;&nbsp;|&nbsp;&nbsp;</span>'));
       }
-
-     
 			$rootScope.isAndroid = typeof Android !== typeof undefined;
       $rootScope.platform = $rootScope.isAndroid ? "app" : "web";
       
