@@ -46,50 +46,7 @@ define(['./index'], function (controllers) {
       	return $sce.trustAsHtml(returnArr.join('<span class="pipe">&nbsp;&nbsp;|&nbsp;&nbsp;</span>'));
       }
 
-     $scope.getCurrencySymbol=function(currencyCode){
-          //var currencyCode=$scope.getCartDetailsVal.currency_code;
-          currencyCode = currencyCode || 'INR';
-          var currencies = {
-            "AUD": {
-              prefix: "AU",
-              cssClass: "fa fa-usd"
-            },
-            "GBP": {
-              prefix: "",
-              cssClass: "fa fa-gbp"
-            },
-            "CAD": {
-              prefix: "CA",
-              cssClass: "fa fa-usd"
-            },
-            "EUR": {
-              prefix: "",
-              cssClass: "fa fa-eur"
-            },
-             "INR": {
-              prefix: "",
-              cssClass: "fa fa-inr"
-            },
-             "MYR": {
-              prefix: "RM",
-              cssClass: "fa fa-"
-            },
-             "SGD": {
-              prefix: "S",
-              cssClass: "fa fa-usd"
-            },
-             "USD": {
-              prefix: "",
-              cssClass: "fa fa-usd"
-            },
-
-          }
-          var currency = currencies[currencyCode];
-
-          return $sce.trustAsHtml(currency.prefix + '<i class="' + currency.cssClass + '"> </i>');
-
-          
-        }
+     
 			$rootScope.isAndroid = typeof Android !== typeof undefined;
       $rootScope.platform = $rootScope.isAndroid ? "app" : "web";
       
