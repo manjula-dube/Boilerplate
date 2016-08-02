@@ -5,12 +5,7 @@
 define([
     //'./templates',
     './controllers/ctrl.main',
-    './controllers/checkout-cart-ctrl',
-    './controllers/login-ctrl',
-    './controllers/payment-ctrl',
-    './controllers/payment-success-ctrl',
-    './controllers/shipping-ctrl',
-    './directives/craftsvilla-directive',
-    './services/craftsvilla-service',
-    './filters/craftsvilla-filter',
+    './directives/cv-directive',
+    './services/cv-service',
+    './filters/cv-filter',
 ], function () {});
