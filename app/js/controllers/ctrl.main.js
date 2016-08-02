@@ -88,42 +88,7 @@ define(['./index'], function (controllers) {
 
           return $sce.trustAsHtml(currency.prefix + '<i class="' + currency.cssClass + '"> </i>');
 
-          // alert(currencyCode);
-          // if (currencyCode=='AUD')
-          // {
-          //   return $sce.trustAsHtml('AU<i class="fa fa-usd"> </i>');
-          // }
-          // else if (currencyCode=='GBP')
-          // {
-          //   return $sce.trustAsHtml('<i class="fa fa-gbp"> </i>');
-          // }
-          // else if (currencyCode=='CAD')
-          // {
-          //   return $sce.trustAsHtml('CA<i class="fa fa-usd"> </i>');
-          // }
-          // else if (currencyCode=='EUR')
-          // {
-          //   return $sce.trustAsHtml('<i class="fa fa-eur"> </i>');
-          // }
-          // else if (currencyCode=='INR')
-          // {
-          //   return $sce.trustAsHtml('<i class="fa fa-inr"> </i>');
-          // }
-          // else if (currencyCode=='MYR')
-          // {
-          //   return $sce.trustAsHtml('RM<i class="fa fa-"> </i>');
-          // }
-          // else if (currencyCode=='SGD')
-          // {
-          //   return $sce.trustAsHtml('S<i class="fa fa-usd"> </i>');
-          // }else if (currencyCode=='USD')
-          // {
-          //   return $sce.trustAsHtml('<i class="fa fa-usd"> </i>');
-          // }
-          // else
-          // {
-
-          // }
+          
         }
 			$rootScope.isAndroid = typeof Android !== typeof undefined;
       $rootScope.platform = $rootScope.isAndroid ? "app" : "web";
